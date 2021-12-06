@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 1vh 2vw 0;
+}
+
+table,
+thead,
+tr,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+ol {
+  list-style-type: upper-roman;
+}
+
+#media {
+  text-align: center;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.img img {
+  border: 10px solid red;
+  width: 500px;
+  height: auto;
+  margin: 15px 33%;
+}
+
+#media {
+  margin: 0;
+}
+
+#lions {
+  text-align: center;
+}

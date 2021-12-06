@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+}
+
+body * {
+  margin: 20px auto;
+}
+div p {
+  font-style: italic;
+  text-decoration: underline;
+  background-color: #c0f7d7;
+  border-color: #27c76b;
+  border-style: ridge;
+  padding: 40px;
+  width: fit-content;
+  text-align: center;
+}
+
+#flag {
+  width: 51px;
+  height: 33px;
+  display: flex;
+}
+
+.red,
+.blue,
+.white {
+  width: 17px;
+  height: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.red {
+  background-color: red;
+}
+.blue {
+  background-color: blue;
+}
+.white {
+  background-color: white;
+}
+
+/* 1.Change the second li of the 1st div to blue */
+ul > li:nth-child(2) {
+  color: blue;
+}
+
+/* 2.Make all the li of the first div in uppercase and in bold */
+ul > li {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+/* 3.Change the 1st paragraph of the second div so its background color will be pink and its color white */
+div:nth-of-type(4) p:first-of-type {
+  background-color: pink;
+  color: white;
+}
+/* 4.Make the 2nd paragraph of the second div with a background color light blue, with padding and margin */
+div:nth-of-type(4) p:nth-of-type(2) {
+  background-color: rgb(27, 148, 255);
+  padding: 50px;
+  margin: 100px auto;
+}
+
+.position {
+  width: 300px;
+  height: 120px;
+  background-color: gray;
+  /* position: relative; */
+}
+
+.blue2 {
+  background-color: lightskyblue;
+  position: relative;
+  right: 95px;
+  top: 5px;
+  z-index: 1;
+}
+.orange {
+  background-color: orange;
+  position: relative;
+  right: 95px;
+  top: -110px;
+  right: 90px;
+  z-index: 5;
+}
+
+.blue2,
+.orange,
+.z-index {
+  width: 100px;
+  height: 100px;
+}
+
+.z-index {
+  background-color: black;
+  position: absolute;
+  right: 95px;
+  top: -220px;
+  right: 90px;
+  z-index: 3;
+}
