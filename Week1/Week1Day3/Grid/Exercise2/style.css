@@ -1,0 +1,44 @@
+:root {
+  --color-blue: rgb(81, 188, 255);
+  --color-light-gray: rgb(199, 198, 218);
+  --color-dark-gray: rgb(77, 77, 84);
+  --color-yellow: rgb(255, 220, 23);
+  --color-light-green: rgb(158, 218, 115);
+  --color-dark-green: rgb(48, 123, 82);
+  --color-pink: rgb(250, 183, 224);
+  --color-orange: rgb(244, 131, 96);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: var(--color-blue);
+}
+.hero {
+  background-color: var(--color-light-gray);
+}
+.main-content {
+  background-color: var(--color-yellow);
+}
+.side-bar {
+  background-color: var(--color-light-green);
+}
+.extra-content {
+  background-color: var(--color-dark-gray);
+}
+.rel-images {
+  background-color: var(--color-dark-green);
+}
+.rel-posts {
+  background-color: var(--color-pink);
+}
+.footer {
+  background-color: var(--color-orange);
+}
+
+/* grid-template-areas: "one one two two"
+                     "one one two two"
+                     "three three four four"
+                     "three three four four"; */
