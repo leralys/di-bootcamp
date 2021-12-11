@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit");
+
+/* Defaults */
+* {
+  font-family: "Outfit", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #fff;
+}
+
+/* Buttons */
+.btn-outline-primary {
+  border: 3px solid tomato;
+  color: tomato;
+}
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: tomato;
+  border: 3px solid tomato;
+}
+
+/* General classes */
+section {
+  width: 100vw;
+}
+.column-centered {
+  display: flex;
+  border: 1px solid blue;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 150px;
+}
+
+/* Hero section */
+#image {
+  width: 200px;
+  height: 200px;
+  background-color: tomato;
+}
+
+.hero {
+  border: 1px solid black;
+  background-color: hsl(0, 0%, 90%);
+  height: 100vh;
+  align-content: space-between;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: thistle;
+}
