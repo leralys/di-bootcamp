@@ -37,8 +37,3 @@
 .footer {
   background-color: var(--color-orange);
 }
-
-/* grid-template-areas: "one one two two"
-                     "one one two two"
-                     "three three four four"
-                     "three three four four"; */
