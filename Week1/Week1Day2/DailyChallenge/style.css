@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto+Condensed:wght@700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+
+body {
+  background-image: url("images/iron-man.jpeg");
+  background-size: cover; /* Resize the background image to cover the entire container */
+  background-repeat: no-repeat; /* Do not repeat the image */
+}
+
+nav {
+  display: flex;
+  background-color: gray;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 60px;
+}
+
+li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+li a {
+  text-decoration: none;
+}
+
+.navigation a {
+  font-size: 3rem;
+  padding-right: 15px;
+  color: black;
+}
+
+li a:hover {
+  color: blue;
+}
+
+article {
+  margin-left: 3vw;
+  margin-top: 150px;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 5rem;
+  font-family: "Roboto Condensed", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+p,
+p > .strong,
+li {
+  font-family: "Poppins", sans-serif;
+}
+
+p {
+  width: 30%;
+}
+
+p,
+p > .strong {
+  font-size: 1.8rem;
+}
+
+.strong {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+footer {
+  background-color: rgb(34, 19, 19);
+  padding: 20px 35%;
+}
+
+footer > ul > li > a {
+  color: white;
+  font-size: 2rem;
+  margin-right: 25px;
+}
+
+/* Using the Avengers Daily Challenge, we will be adding media queries to change the styling of the page
+depending on the screen size (computer, tablet, smartphone).
+For example: depending on the screen size change the structure of the page,
+the padding, the colors ..ect. */
+
+@media all and (max-width: 768px) {
+  .navigation a {
+    font-size: 1.5rem;
+  }
+  p {
+    width: 80vw;
+    margin: 0 auto;
+  }
+  h1 {
+    text-align: right;
+    margin-right: 10vw;
+    padding: 0px;
+  }
+  /* CREATES TRANSPARENT BACKGROUND */
+  article {
+    margin: 60px 0 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #ababab;
+    overflow: hidden;
+    position: relative;
+  }
+  article h1,
+  article p {
+    position: relative;
+    z-index: 2;
+  }
+  article:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.4;
+    background-image: url("images/iron-man.jpeg");
+    background-position: 50% 0;
+    background-attachment: fixed;
+  }
+  footer {
+    padding: 35px;
+  }
+  footer ul {
+    text-align: center;
+  }
+  footer > ul > li > a {
+    font-size: 1.2rem;
+  }
+}

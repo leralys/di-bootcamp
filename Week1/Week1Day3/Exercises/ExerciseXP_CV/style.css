@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Readex+Pro:wght@300;500&display=swap");
+
+:root {
+  --color-white: rgb(255, 255, 255);
+  --color-light-grey: #dad8d8;
+  --color-dark-grey: #3d3d3d;
+}
+
+/* font-family: 'Readex Pro', sans-serif;
+font-family: 'Staatliches', cursive; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+}
+
+body {
+  background-color: black; /* Fallback color if  background-image is not loaded*/
+  background-image: url(images/background.jpeg);
+  background-size: cover; /* Resize the background image to cover the entire container */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-attachment: fixed;
+}
+
+/* ************ FONTS AND TEXT TRANSFORMS ************ */
+
+h1,
+h2,
+h3 {
+  font-family: "Readex Pro", sans-serif;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h3 {
+  font-weight: 300;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* ************ FLEX ************ */
+
+.flex {
+  display: flex;
+}
+.col {
+  flex-direction: column;
+}
+/* ************ A4 PAGE ************ */
+
+.container {
+  background-color: var(--color-white);
+  margin: 4vh auto;
+  border-radius: 10px;
+  max-width: 794px;
+  max-height: 1123px;
+}
+
+/* ************ ASIDE BAR ************ */
+
+.aside {
+  background-color: var(--color-light-grey);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 30%;
+  justify-content: center;
+}
+
+.aside-info-box {
+  margin: 2rem 10%;
+  border-bottom: 1.5px solid var(--color-dark-grey);
+  padding-bottom: 1.5rem;
+  text-align: center;
+}
+
+.aside-info-box:last-of-type {
+  border: none;
+}
+
+.aside-info-box p {
+  font-size: 1.3em;
+}
+
+.photo img {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 1.5rem;
+}
+/* ************ CV ************ */
+
+.article {
+  width: 70%;
+}
+
+.article-section {
+  border-bottom: 1.5px solid var(--color-dark-grey);
+  margin: 2rem 1rem 2.5rem 1rem;
+}
+
+.article-section:last-of-type {
+  border: none;
+}
+
+.article-section h2,
+.article-section p {
+  margin-bottom: 0.5rem;
+}

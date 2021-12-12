@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Wild&Wacky Vegetables</title>
+  </head>
+  <body>
+    <!-- 1. Use the Bootstrap grid classes to create 2 columns. On the left a sidebar and on the right all the main content.
+    Use the Bootstrap Content to add a quote, table and search form to the webpage.
+    Use the Bootstrap alert component to add a danger alert. Use the border classes to give the images borders.
+ -->
+    <div class="container-fluid my-3">
+        <div class="row mx-auto">
+            <div class="col-md-3 card py-4 bg-light">
+                <div class="px-3">
+                    <h4 class="fw-bold text-uppercase fs-6 text-secondary">Some Favorites</h4>
+                    <ul class="list-unstyled">
+                            <li class="text-primary">Celery Root</li>
+                            <li class="text-primary">Spaghetti Squash</li>
+                            <li class="text-primary">Killer Mushrooms</li>
+                        </ul>
+                </div>
+                <form>
+                    <input class="form-control me-2" type="search" aria-label="Search Recipes">
+                    <button class="btn btn-primary mt-2" type="submit">Search Recipes</button>
+                </form>
+            </div>
+
+            <main class="col-md-9">
+                <div class="alert alert-danger" role="alert">
+                    Uh oh! Have you had your daily dose of veggies today??
+                  </div>
+                <h1 class="fw-bold">Wild & Wacky Vegetables</h1>
+                <blockquote class="blockquote border-start border-5">
+                    <p class="mb-3 ms-3">We don't need a melting pot in this country, folks. We need a salad bowl.
+                        In a salad bowl, you put in the different things. You want the vegetables - the lettuce,
+                        the cucumbers, the onions, the green peppers - to maintain their identity.
+                        You appreciate differences.</p>
+                    <footer class="blockquote-footer ms-4">Jane Elliot in <cite title="Source Title">Source Title</cite></footer>
+                </blockquote>
+                
+                <div>
+                    <h2 class="fw-bold">Some diseases</h2>
+                    <table class="table table-striped table-borderless table-bordered border-secondary">
+                      <thead>
+                        <tr>
+                          <th scope="col">Veggie</th>
+                          <th scope="col">Disease</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Beets</td>
+                          <td>Carrots</td>
+                        </tr>
+                        <tr>
+                          <td>Beeturia</td>
+                          <td>Carotenosis</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+                  
+                <div class="row d-flex justify-content-around my-4 ms-0">
+                    <img class="img-thumbnail col-sm-3" src="https://images.unsplash.com/photo-1593105544559-ecb03bf76f82?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Beetroot">
+                    <img class="img-thumbnail col-sm-3" src="https://images.unsplash.com/photo-1522184216316-3c25379f9760?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Carrots">
+                    <img class="img-thumbnail col-sm-3" src="https://images.unsplash.com/photo-1598030304671-5aa1d6f21128?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80" alt="Fruits and vegetables">
+                </div>
+
+                <div>
+                  <h2 class="fw-bold">Really informative info</h2>
+                  <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi
+                  amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale.
+                  Celery potato scallion desert raisin horseradish spinach carrot soko.
+                  Lotus root water spinach fennel kombu maize bamboo shoot green bean wiss chard
+                  seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut 
+                  gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify
+                  bunya nuts nori azuki bean chickweed potato bell pepper artichoke.
+                  </p>
+                  <p>Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra
+                  azuki bean corn fava bean mustard tigernut jÃ­cama green bean celtuce collard greens
+                  avocado quandong fennel gumbo black-eyed pea. Grape silver beet watercress potato
+                  tigernut corn groundnut. Chickweed okra pea winter purslane coriander yarrow sweet pepper
+                  radish garlic brussels sprout groundnut summer purslane earthnut pea tomato spring onion
+                  azuki bean gourd. Gumbo kakadu plum komatsuna black-eyed pea green bean zucchini gourd
+                  winter purslane silver beet rock melon radish asparagus spinach.</p>
+                </div>
+                
+            </main>
+            </div>
+        
+    </div>
+    
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  </body>
+</html>
