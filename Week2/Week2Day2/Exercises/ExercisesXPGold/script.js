@@ -58,10 +58,16 @@ if (userGrade > 90) {
 //   The string is : "swimming", your program should console.log : "swimmingly"
 //   The string is : "go" your program should console.log : "go"
 
-// let verb = prompt('Please type a verb');
-// if (verb.length >= 3 && verb.substring(verb.length - 3) !== 'ing' && verb[verb.length - 1] !== 'e') {
-//     verb += 'ing';
-// } else if (verb.length >= 3 && verb.substring(verb.length - 3) !== 'ing' && verb[verb.length - 1] === 'e') {
-//     verb = verb.substring(0, verb.length - 1) + 'ing';
-//     console.log(verb);
-// } console.log(verb);
+
+// not real english spelling 🤦
+
+
+let verb = (prompt('Please type a verb')).toLowerCase();
+
+if (verb.length >= 3) {
+    if (verb.slice(-3) !== 'ing') {
+        console.log(`${verb}ing`);
+    } else if (verb.slice(-3) === 'ing') {
+        console.log(`${verb}ly`);
+    }
+} else console.log(verb);
