@@ -30,7 +30,7 @@ let users = [
     }
 ];
 
-// 1. console.log the username of each user
+// console.log the username of each user
 
 for (let obj of users) {
     for (key in obj) {
