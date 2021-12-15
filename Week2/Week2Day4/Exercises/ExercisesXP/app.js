@@ -17,7 +17,7 @@ const infoAboutMe2 = () => {
     console.log('Hi, I\'m Lera, I live in Kfar Saba, and I learn web development. This is an arrow function');
 }
 
-// infoAboutMe();
+infoAboutMe();
 // infoAboutMe1();
 // infoAboutMe2();
 
@@ -32,8 +32,8 @@ const infoAboutMe2 = () => {
 const infoAboutPerson = (personName, personAge, personFavoriteColor) => {
     console.log(`Your name is ${personName}, you are ${personAge} years old, your favourite color is ${personFavoriteColor}.`)
 }
-// infoAboutPerson('David', 45, 'blue');
-// infoAboutPerson('Josh', 12, 'yellow');
+infoAboutPerson('David', 45, 'blue');
+infoAboutPerson('Josh', 12, 'yellow');
 
 // Exercise 2 : Tips
 
@@ -62,7 +62,7 @@ const calculateTip = () => {
     return num += tip;
 }
 
-// console.log(`The bill+tip is $${calculateTip()}`);
+console.log(`The bill+tip is $${calculateTip()}`);
 
 
 // Exercise 3 : Find The Numbers Divisible By 23
@@ -82,7 +82,7 @@ const isDivisible = () => {
         if (i % 23 === 0) numArr.push(i);
     } return numArr;
 }
-// console.log(`Outcome: ${isDivisible().join(' ')}`);
+console.log(`Outcome: ${isDivisible().join(' ')}`);
 
 const sum = (arr) => {
     let result = 0;
@@ -90,7 +90,7 @@ const sum = (arr) => {
         result += el;
     } return result;
 }
-// console.log(`Sum: ${sum(isDivisible())}`);
+console.log(`Sum: ${sum(isDivisible())}`);
 
 
 // Bonus: Add a parameter divisor to the function.
@@ -106,10 +106,10 @@ const isDivisible1 = (divisor) => {
         if (i % divisor === 0) numArr.push(i);
     } return numArr;
 }
-// console.log(`All numbers divisible by 3: ${isDivisible1(3).join(' ')}.
-// The sum is: ${sum(isDivisible1(3))}`);
-// console.log(`All numbers divisible by 45: ${isDivisible1(45).join(' ')}.
-// The sum is: ${sum(isDivisible1(3))}`);
+console.log(`All numbers divisible by 3: ${isDivisible1(3).join(' ')}.
+The sum is: ${sum(isDivisible1(3))}`);
+console.log(`All numbers divisible by 45: ${isDivisible1(45).join(' ')}.
+The sum is: ${sum(isDivisible1(3))}`);
 
 
 
@@ -160,7 +160,7 @@ const myBill = () => {
         }
     } return totalPrice;
 }
-// console.log(`Total price is ${myBill()}`);
+console.log(`Total price is ${myBill()}`);
 // console.log(stock['banana']);
 // console.log(stock['orange']);
 // console.log(stock['apple']);
@@ -249,46 +249,44 @@ console.log(changeEnough(0.75, [0, 0, 20, 5]));
 
 // Bonus: Instead of using a prompt inside the 3 first functions, only use a prompt inside the totalVacationCost() function. You need to change the 3 first functions, accordingly.
 
-const hotelCost = () => {
+const hotelCost = (n) => {
     let priceHotel = 140;
-    do {
-        numNights = parseInt(prompt('How many nights would you like to stay in the hotel?'));
-    }
-    while (numNights < 0 || isNaN(numNights));
-    return numNights * priceHotel;
+    return n * priceHotel;
 }
-// console.log(hotelCost());
 
-const planeRideCost = () => {
-    let destination;
-    do {
-        destination = prompt('What is your destination? Please enter city name');
-    }
-    while (!isNaN(parseInt(destination)) || destination === null || destination === '');
-    let d = destination.toLowerCase();
-    switch (d) {
+const planeRideCost = (str) => {
+    str.toLowerCase();
+    switch (str) {
         case 'london': return 183;
         case 'paris': return 220;
         default: return 300;
     }
 }
-// console.log(planeRideCost());
 
-const rentalCarCost = () => {
-    let carRentDays;
+const rentalCarCost = (num) => {
     let carCost = 40;
+    let discount = 0.95;
+    if (num < 10) return num * carCost;
+    else return num * carCost * discount;
+}
+
+const totalVacationCost = () => {
+    let numNights;
+    let destination;
+    let carRentDays;
+    do {
+        numNights = parseInt(prompt('How many nights would you like to stay in the hotel?'));
+    }
+    while (numNights < 0 || isNaN(numNights));
+    do {
+        destination = prompt('What is your destination? Please enter city name');
+    }
+    while (!isNaN(parseInt(destination)) || destination === null || destination === '');
     do {
         carRentDays = parseInt(prompt('How many days would you like to rent the car?'));
     }
     while (carRentDays < 0 || isNaN(carRentDays));
-    let discount = 0.95;
-    if (carRentDays < 10) return carCost * carRentDays;
-    else return carCost * carRentDays * discount;
-}
-// console.log(rentalCarCost());
-
-const totalVacationCost = () => {
-    return hotelCost() + planeRideCost() + rentalCarCost();
+    return hotelCost(numNights) + planeRideCost(destination) + rentalCarCost(carRentDays);
 }
 
-// console.log(`The total vacation cost is ${totalVacationCost()}`);
+console.log(`The total vacation cost is $${totalVacationCost()}.`);
