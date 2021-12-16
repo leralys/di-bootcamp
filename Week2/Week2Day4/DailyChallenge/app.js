@@ -18,7 +18,7 @@
 
 // The number of stars that wraps the sentence, must depend on the length of the longest word.
 
-let words = ["Hello", "world", "in", "a", "frame"];
+let words = ["Hello", "wor000000ld", "in", "a", "frame"];
 let asterisk = '*';
 let border = 2; //Must be even; two sides, each is integer
 let padding = 2; //Must be even; two sides, each is integer
@@ -42,7 +42,7 @@ const addPaddingBorder = (arr) => {
 }
 
 const construct = (arr) => {
-    let firstLast = asterisk.repeat(9);
+    let firstLast = asterisk.repeat(longestWord(arr) + border + padding);
     addPaddingBorder(arr);
     arr.unshift(firstLast);
     arr.push(firstLast);
