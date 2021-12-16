@@ -29,7 +29,7 @@ let answer = prompt('Please type some words separated by commas. For example: "H
 let arrayOfWords = answer.split(',');
 let words = [" Hello ", " world ", "in", "a", "frame"];
 
-let asterisk = '*';
+let symbol = '*';
 let border = 2; //Must be even; two sides, each is integer
 let padding = 2; //Must be even; two sides, each is integer
 
@@ -47,12 +47,12 @@ const addPaddingBorder = (arr) => {
     for (let i = 0; i < arr.length; i++) {
         arr[i] = arr[i].padStart(arr[i].length + padding / 2);
         arr[i] = arr[i].padEnd(word + padding);
-        arr[i] = asterisk.repeat(border / 2) + arr[i] + asterisk.repeat(border / 2);
+        arr[i] = symbol.repeat(border / 2) + arr[i] + symbol.repeat(border / 2);
     } return arr;
 }
 
 const construct = (arr) => {
-    let firstLast = asterisk.repeat(longestWord(arr) + border + padding);
+    let firstLast = symbol.repeat(longestWord(arr) + border + padding);
     addPaddingBorder(arr);
     arr.unshift(firstLast);
     arr.push(firstLast);
