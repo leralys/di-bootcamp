@@ -17,8 +17,18 @@
 // *********
 
 // The number of stars that wraps the sentence, must depend on the length of the longest word.
+// Help on the Daily challenge
 
-let words = ["Hello", "wor000000ld", "in", "a", "frame"];
+// Prompt the user for several words (separated by commas).
+// Put the words into an array.
+// Console.log the words one per line, in a rectangular frame as seen below.
+// Check out the Hints and Requirements below.
+
+// ---- no error checking here :(( ---- 
+let answer = prompt('Please type some words separated by commas. For example: "Hello,World,in,a,frame"');
+let arrayOfWords = answer.split(',');
+let words = [" Hello ", " world ", "in", "a", "frame"];
+
 let asterisk = '*';
 let border = 2; //Must be even; two sides, each is integer
 let padding = 2; //Must be even; two sides, each is integer
@@ -50,4 +60,4 @@ const construct = (arr) => {
         console.log(el);
     }
 }
-construct(words);
+construct(arrayOfWords);
