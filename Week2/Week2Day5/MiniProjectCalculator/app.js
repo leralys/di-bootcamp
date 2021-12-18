@@ -5,54 +5,70 @@
 // Hint : you can use the eval() method to help with your calculations.
 
 const display = document.querySelector('.display');
-let currentOperand;
-let previousOperand;
+let currentOperand = '';
+let previousOperand = '';
 let operation = '';
+let isEqual = false;
 
-number = (x) => {
-    if (currentOperand != undefined) previousOperand = currentOperand;
-    display.innerText = currentOperand = x;
-    console.log(`previous ${previousOperand}`);
-    console.log(`current ${currentOperand}`);
+const reset = () => {
+    if (isEqual || (!isEqual && currentOperand != '')) {
+        display.innerText = '';
+    }
+    currentOperand = '';
+    previousOperand = '';
+    operation = '';
 }
-operator = (operator) => {
+
+const number = (x) => {
+    currentOperand += x.toString();
+    if (currentOperand.length > 13) {
+        currentOperand = currentOperand.slice(0, 13);
+    }
+    display.innerText = currentOperand;
+}
+const operator = (operator) => {
+    if (currentOperand != '') {
+        previousOperand = currentOperand;
+        currentOperand = '';
+    }
     operation = operator;
-    console.log(operator);
 }
 
 const equal = () => {
     let result;
-    if (previousOperand != undefined || currentOperand != undefined || operation != undefined) {
+    if (previousOperand !== '' || currentOperand !== '' || operation !== '') {
+        isEqual = true;
         Number(previousOperand);
         Number(currentOperand);
         switch (operation) {
             case '+':
-                result = previousOperand + currentOperand;
-                display.innerText = result;
-                previousOperand = currentOperand = undefined;
+                result = Number(previousOperand) + Number(currentOperand);
+                display.innerText = result.toString().slice(0, 13);
+                currentOperand = result;
+                previousOperand = operation = '';
                 return;
             case '-':
                 result = previousOperand - currentOperand;
-                display.innerText = result;
-                previousOperand = currentOperand = undefined;
+                display.innerText = result.toString().slice(0, 13);
+                currentOperand = result;
+                previousOperand = currentOperand = '';
                 return
             case '*':
                 result = previousOperand * currentOperand;
-                display.innerText = result;
-                previousOperand = currentOperand = undefined;
+                display.innerText = result.toString().slice(0, 13);
+                currentOperand = result;
+                previousOperand = currentOperand = '';
                 return;
             case '/':
                 result = previousOperand / currentOperand;
-                display.innerText = result;
-                previousOperand = currentOperand = undefined;
-                return;
+                display.innerText = result.toString().slice(0, 13);
+                currentOperand = result;
+                previousOperand = currentOperand = '';
         }
     }
 }
 
-reset = () => {
+const clearScreen = () => {
     currentOperand = '';
-    previousOperand = '';
-    operation = '';
     display.innerText = '';
 }
