@@ -16,4 +16,3 @@ for (let i = 0; i < arr.length; i++) {
     newDiv.style.backgroundColor = `${colors[i]}`;
     document.body.firstElementChild.appendChild(newDiv);
 }
-console.log(document.body.firstElementChild.appendChild(newDiv))
