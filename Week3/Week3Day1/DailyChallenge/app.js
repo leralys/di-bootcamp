@@ -12,7 +12,7 @@ const colors = ['red', 'blue', 'green', 'cyan', 'orange', 'grey', 'pink', 'purpl
 
 for (let i = 0; i < arr.length; i++) {
     let newDiv = document.createElement('div');
-    newDiv.classList.add('planet', `${colors[i]}`);
+    newDiv.classList.add('planet');
     newDiv.style.backgroundColor = `${colors[i]}`;
     document.body.firstElementChild.appendChild(newDiv);
 }
