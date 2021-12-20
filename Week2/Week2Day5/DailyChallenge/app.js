@@ -38,12 +38,11 @@ const sing = (num) => {
             console.log(`Take ${counter} down, pass ${pronoun} around`);
             if (num - counter <= 0)
                 console.log("no bottle of beer on the wall");
-            return;
         }
     }
 }
 
-sing(userNum, counter);
+sing(userNum);
 
 
 
