@@ -50,7 +50,7 @@ const playTheGame = () => {
 }
 
 const test = (userNumber, computerNumber) => {
-    let counter = 2;
+    let counter = 2; //3 tries
     for (let i = 0; i < 3; i++) {
         if (counter === 0) {
             userNumber === computerNumber ? alert('WINNER') : alert('out of chances');
