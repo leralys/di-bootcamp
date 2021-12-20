@@ -25,11 +25,10 @@
 // Check out the Hints and Requirements below.
 
 // ---- no error checking here :(( ---- 
-let answer = prompt('Please type some words separated by commas. For example: "Hello,World,in,a,frame"');
-let arrayOfWords = answer.split(',');
-let words = [" Hello ", " world ", "in", "a", "frame"];
+let answer = prompt('Please type some words separated by commas. For example: "Hello, World, in, a, frame"');
+let arrayOfWords = answer.split(', ');
 
-let symbol = '*';
+let symbol = '*'; //symbol.length has to === 1, because we have border to control the width
 let border = 2; //Must be even; two sides, each is integer
 let padding = 2; //Must be even; two sides, each is integer
 
@@ -43,7 +42,7 @@ const longestWord = (arr) => {
 
 const addPaddingBorder = (arr) => {
     let word = longestWord(arr);
-    let len = word + border + padding;
+    // let len = word + border + padding;
     for (let i = 0; i < arr.length; i++) {
         arr[i] = arr[i].padStart(arr[i].length + padding / 2);
         arr[i] = arr[i].padEnd(word + padding);
