@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: grey;
+}
+
+.card {
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 10px;
+  width: 600px;
+  height: 150px;
+  margin: 50px;
+}
+#input {
+  width: 450px;
+  margin: 25px;
+  /* line-height: 2; */
+  height: 30px;
+  border-radius: 5px;
+  padding: 5px;
+  border: 2px solid grey;
+}
+
+#values {
+  padding-left: 25px;
+  height: 65px;
+  width: 600px;
+}
