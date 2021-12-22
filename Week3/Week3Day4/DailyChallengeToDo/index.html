@@ -12,6 +12,8 @@ add an empty div below the form
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <script src="js/app.js" defer></script>
 </head>
 
@@ -19,10 +21,18 @@ add an empty div below the form
     <h1>TO-DO LIST</h1>
     <div class="container">
         <form class="form" action="">
-            <input type="text" name="new-todo" id="new-todo" autocomplete="off" placeholder="new task">
+            <input type="text" name="new-task" id="new-task" autocomplete="off" placeholder="new task">
             <input type="submit" value="ADD" id="submit">
         </form>
-        <div class="listTasks"></div>
+        <div>
+            <div class="listTasks">
+                <!-- <div class="task"><input type="checkbox" class="checkbox">To do someting</div>
+                <div class="task"><input type="checkbox" class="checkbox">To do someting</div>
+                <div class="task"><input type="checkbox" class="checkbox">To do someting</div>
+                <div class="task"><input type="checkbox" class="checkbox">To do someting</div> -->
+            </div>
+        </div>
+
     </div>
 
 </body>

@@ -1,5 +1,4 @@
-// In the js file, you must add the following functionalities:
-// Create an empty array : let listTasks = [];
+let listTasks = [];
 
 // Create a function called addTask(). As soon as the user clicks on the button:
 // check that the input is not empty,
@@ -9,14 +8,34 @@
 // an input type="checkbox
 // a “X” button. Use font awesome for the “X” button.
 
-// BONUS I (not mandatory):
-// Change the variable listTasks to an array of task objects.
-// Each new task added to the array should have the properties : task_id, text and done (a boolean - false by default).
-// Every new task object should have a task_id, starting from 0, and a data-task-id attribute, which value is the same as the task_id. Check out data-* attributes here.
-// Create a function named doneTask(), that as soon as the user clicks on the “checkbox” input, the done property should change from false to true in the object, and from black to crossed out red in the DOM.
-
-// BONUS II (not mandatory):
-// Create a function named deleteTask(), that as soon as the user clicks on the “X” button, delete that specific task from the array listTasks.
 
 
-// console.log('Hi');
+const submit = document.querySelector('#submit');
+const myForm = document.forms[0];
+const newTask = document.querySelector('#new-task'); //input of new task
+// const listTasks = document.querySelector('.listTasks');
+const list = document.querySelector('.listTasks');
+
+
+
+const addTask = function () {
+    if (newTask.value !== '') {
+        let task = document.createElement('div'); //create new todo
+        task.classList.add('task');
+        let checkbox = document.createElement('input'); //create checkbox
+        checkbox.setAttribute('type', 'checkbox');
+        checkbox.classList.add('checkbox');
+        task.append(checkbox); //append checkbox to the todo
+        let taskText = document.createTextNode(newTask.value); //append text of the todo
+        task.append(taskText);
+        list.append(task); //append todo to the list
+        list.style.display = 'block';
+        newTask.value = '';
+    }
+}
+
+myForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    console.log('clicked');
+    addTask();
+});

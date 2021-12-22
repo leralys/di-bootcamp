@@ -25,36 +25,57 @@ h1 {
   text-align: center;
   margin-bottom: 20px;
 }
-#submit,
-#new-todo {
-  border: none;
-  outline: none;
-  background-color: #fff;
-  font-size: 1.5rem;
-}
+
 .container {
   width: 500px;
   margin: 0 auto;
   display: flex;
   flex-wrap: nowrap;
   background: white;
-  height: 30px;
+  flex-direction: column;
+  font-size: 1.5rem;
+  background: none;
 }
+/* new task input section */
 .form {
   width: 100%;
   display: flex;
-  height: 50px;
+  height: 75px;
 }
-
-#new-todo {
-  /* border: 1px solid black; */
+#submit,
+#new-task {
+  border: none;
+  outline: none;
+  background-color: #fff;
+  font-size: 1.5rem;
+}
+#new-task {
   flex-grow: 1;
   padding-left: 15px;
 }
 #submit {
-  /* border: 1px solid green; */
   padding: 0 15px;
+  color: hsl(211, 100%, 50%);
 }
 #submit:hover {
   color: red;
+}
+
+/* list of tasks section */
+
+.listTasks {
+  margin-top: 15px;
+  padding: 10px 40px 50px;
+  background: white;
+  display: none;
+}
+
+.task {
+  width: 100%;
+  padding: 15px;
+  background: white;
+  border-bottom: 1px solid hsl(211, 100%, 50%);
+}
+.checkbox {
+  margin-right: 15px;
 }
