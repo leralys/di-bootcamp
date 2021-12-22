@@ -15,13 +15,6 @@ const p = document.querySelector('#p');
 
 input.addEventListener('keyup', inputString);
 
-// function inputString(e) {
-//     let string = e.target.value.match(/[a-z]/gi);
-//     e.target.value = string;
-//     p.textContent = e.target.value;
-// }
-
-
 function inputString(e) {
     let string = e.target.value.replace(/[^a-z]/gi, '');
     e.target.value = string;
