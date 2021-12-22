@@ -1,0 +1,30 @@
+<!-- In the HTML file
+create a form with one input type="text", and a “Submit” button.
+add an empty div below the form
+<div class="listTasks"></div> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+
+<body>
+    <h1>TO-DO LIST</h1>
+    <div class="container">
+        <form class="form" action="">
+            <input type="text" name="new-todo" id="new-todo" autocomplete="off" placeholder="new task">
+            <input type="submit" value="ADD" id="submit">
+        </form>
+        <div class="listTasks"></div>
+    </div>
+
+</body>
+
+</html>
