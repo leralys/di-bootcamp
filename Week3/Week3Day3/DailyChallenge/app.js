@@ -9,14 +9,21 @@
 
 // Hint : Check out keycodes in Javascript or Regular Expressions
 
-console.log('hi');
 
 const input = document.querySelector('#input');
-const text = document.querySelector('#values');
+const p = document.querySelector('#p');
 
-input.addEventListener('input', updateValue);
+input.addEventListener('keyup', inputString);
 
-function updateValue(e) {
-    let string = e.target.value.replace(/[^a-z]/gi, '')
-    text.textContent = string;
+// function inputString(e) {
+//     let string = e.target.value.match(/[a-z]/gi);
+//     e.target.value = string;
+//     p.textContent = e.target.value;
+// }
+
+
+function inputString(e) {
+    let string = e.target.value.replace(/[^a-z]/gi, '');
+    e.target.value = string;
+    p.textContent = e.target.value;
 }
