@@ -21,8 +21,8 @@
 
 const mergeWords = string => nextString => {
     if (nextString === undefined) return string;
-    else return mergeWords(string + ' ' + nextString);
+    else return mergeWords(string + ' ' + nextString); //is it a recursion?
 }
 
-console.log(mergeWords('Hello')()); //
+// console.log(mergeWords('Hello')()); //Hello
 // console.log(mergeWords('There')('is')('no')('spoon.')()); //There is no spoon.
