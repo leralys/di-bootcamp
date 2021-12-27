@@ -110,6 +110,12 @@ displayInOrder(colors);
 let color = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
 let ordinal = ["th", "st", "nd", "rd"];
 
+
+let displayWithOrdinal = color.forEach((el, i) => {
+    console.log(`${i + 1}${i >= 3 ? ordinal[0] : ordinal[i + 1]} choice is ${color[i]}`);
+})
+console.log(displayWithOrdinal);
+
 // Exercise 5 : Is It A String ?
 // Instructions
 // Write a JavaScript function that checks whether the value of an input is a string or not.
