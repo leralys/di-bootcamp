@@ -93,12 +93,7 @@ experiencePoints(); //10
 let colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
 
 let isIncludes = colors.includes('Violet'); //true
-const displayInOrder = (arr) => {
-    arr.forEach((el, i, colors) => {
-        console.log(`${1}# choice is ${el}`);
-    });
-}
-displayInOrder(colors);
+colors.forEach((el, i) => console.log(`${i + 1}# choice is ${el}`));
 
 
 // Exercise 4 : Colors #2
@@ -111,10 +106,7 @@ let color = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
 let ordinal = ["th", "st", "nd", "rd"];
 
 
-let displayWithOrdinal = color.forEach((el, i) => {
-    console.log(`${i + 1}${i >= 3 ? ordinal[0] : ordinal[i + 1]} choice is ${color[i]}`);
-})
-console.log(displayWithOrdinal);
+color.forEach((el, i) => console.log(`${i + 1}${i >= 3 ? ordinal[0] : ordinal[i + 1]} choice is ${color[i]}`));
 
 // Exercise 5 : Is It A String ?
 // Instructions
@@ -125,8 +117,8 @@ console.log(displayWithOrdinal);
 // console.log(isString([1, 2, 4, 0]));
 // //false
 
-function isString(variable) {
-    typeof arguments[0] == 'string' ? console.log(true) : console.log(false);
+function isString(arg) {
+    return typeof arg == 'string' //expression will be true / false and we return it
 }
 isString('hello'); //true
 isString([1, 2, 4, 0]); //false
