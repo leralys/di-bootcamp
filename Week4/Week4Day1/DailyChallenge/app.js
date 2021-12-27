@@ -28,30 +28,27 @@ const gameInfo = [
 // Create an array using forEach that contains all the usernames from the gameInfo array,
 // add an exclamation point (ie. “!”) to the end of every username.
 
-let arrUserNames = [];
 
-const createArrNamesExclam = array => {
+const createArrNamesExclam = () => {
     let newArr = [];
-    array.forEach(el => {
+    gameInfo.forEach(el => {
         let { username } = el;
         username += '!';
         newArr.push(username);
-    });
-    return newArr;
+    }); return newArr;
 }
-console.log(createArrNamesExclam(gameInfo));
+console.log(createArrNamesExclam());
 
 // Create an array using forEach that contains the usernames of all players with a score bigger than 5
 
-const userNamesScoreFive = array => {
+const userNamesScoreFive = () => {
     let arrayScoreFive = [];
-    array.forEach(el => {
-        let { username, score } = el;
-        if (score > 5) arrayScoreFive.push(username);
-    });
-    return arrayScoreFive;
+    gameInfo.forEach(el => {
+        if (el.score > 5) arrayScoreFive.push(el.username);
+    }); return arrayScoreFive;
 }
-console.log(userNamesScoreFive(gameInfo));
+
+console.log(userNamesScoreFive());
 
 
 // Find and display the total score of the users.
