@@ -24,6 +24,7 @@ let newArray = [...[, ,]];
 // console.log(newArray);
 
 // Prediction two arrays?
+// Result [undefined, undefined]
 
 
 // Exercise 2 : Employees
