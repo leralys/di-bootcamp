@@ -13,14 +13,58 @@ let sum = numbers.reduce((accum, currVal) => accum + currVal);
 
 const numbersWithDuplicates = [1, 2, 3, 4, 5, 6, 5, 7, 8, 9, 3, 1, 2];
 
-function removeDuplicates() {
-    return numbersWithDuplicates.reduce((accum, currVal) => accum.includes(currVal) ? accum : [...accum, currVal], []);
+// let noDuplicates = numbersWithDuplicates.reduce((accum, currVal) => {
+//     if (!accum.includes(currVal)) accum.push(currVal);
+//     return accum;
+// }, []);
+// console.log(noDuplicates);
+
+function removeDuplicatesWithReduce(arr) {
+    let newArr = arr.reduce((accum, currVal) => {
+        if (!accum.includes(currVal)) accum.push(currVal);
+        return accum;
+    }, []);
+    return newArr;
 }
-console.log(removeDuplicates());
+console.log(removeDuplicatesWithReduce(numbersWithDuplicates));
 
 
-//removeDuplicates hac=s initial value of empty array - 
-// it is a value to which previousValue is initialized the first time the callback is called.
-// If initialValue is specified, that also causes currentValue to be initialized to the first value in the array.
-// so accum  = []; currVal = 1; it check if accum includes currVal, if yes, accum stays the same, if not 
-// using spread operator we assign to accum array create new array from existing 
+
+
+// Exercise 3 : Remove Certain Values
+// Instructions
+// Write a JavaScript function to remove: null, 0, "", false, undefined and NaN values from an array.
+// Sample array : [NaN, 0, 15, false, -22, '',undefined, 47, null]
+// Expected result : [15, -22, 47]
+
+// Exercise 4 : Turtle & Rabbit
+// For this exercise, look at the lesson “More JS methods”
+
+// Using this code :
+// Line up the Turtle and the Rabbit at the start line.
+
+// const startLine = '     ||<- Start line';
+// let turtle = '🐢';
+// let rabbit = '🐇';
+// When you do :
+
+// console.log(startLine);
+// console.log(turtle);
+// console.log(rabbit);
+
+// It should look like this:
+
+// '     ||<- Start line'
+// '       🐢'
+// '       🐇'
+
+// What happens when you run turtle.trim().padEnd(9, '=') on the turtle variable
+// turtle = turtle.trim().padEnd(9, '=');
+// const numbersWithDuplicates = [1, 2, 3, 4, 5, 6, 5, 7, 8, 9, 3, 1, 2];
+
+// numbersWithDuplicates.reduce((accum, currVal) => {
+//     console.log("accum", accum);
+//     console.log("currVal", currVal);
+//     return accum.includes(currVal) ? accum : accum.push(currVal)
+// }, [])
+// console.log(removeWithReduce())
