@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Definition of closure</h1>
+	<h2>A closure is a function having access to the parent scope even after a parent function has closed</h2>
+	<h2>Closures keep local variables alive from functions that should have destroyed them a long time ago.</h2>
+	<h2>We are doing a counter, when we click on the button, we increment the counter by 1</h2>
+	<h3>Here is the process to do this exercise</h3>
+	<ol>
+		<li>We use a global variable, but the problems are:
+			<ul>
+				<li>global variables stay in the memory. The garbage collector cannot delete them</li>
+				<li>global variables are public, any functions or program can modify them</li>
+			</ul>
+		</li><br>
+		<li>To avoid using global variable, let's use local variables,but the problems are:
+			<ul>
+				<li>the local variable keeps being resetted to 0</li>
+			</ul>
+		</li><br>
+		<li>To avoid using local variable, we could try nested functions, but the problems are:
+			<ul>
+				<li>To reach the inner function, we need to call it inside the outer function. So the incrementation is not dynamic</li>
+				<li>The local variable keeps being resetted to 0 because the outer function is invoked everytime we click on the button</li>
+			</ul>
+		</li><br>
+		<li>We could use closures, the benefits are:
+			<ul>
+				<li>We have access to the inner function, after the outer function has been executed</li>
+				<li>We can invoke the inner function in the global scope</li>
+			</ul>
+			But the problem is:
+			<ul>
+				<li>The local variable keeps being resetted to 0 because the outer function is invoked everytime we click on the button</li>
+			</ul>
+		</li><br>
+		<li>SOLUTION: we need to use closures and self invoking functions. The benefits are:
+			<ul>
+				<li>We call the outer function ONCE, so the counter is set to 0 ONCE.</li>
+				<li>Everytime we click on the button, we call ONLY the inner function</li>
+			</ul>
+		</li><br>
+	</ol>
+	<div>
+		<h1>My Counter</h1>
+		<table>
+			<tr>
+				<th>Button</th>
+				<th>Counter value</th>
+			</tr>
+			<tr>
+				<td><button id="btn">Click me</button></td>
+				<td><span id="result"></span></td>
+			</tr>
+		</table>
+	</div>
+
+	<script	src="script_closures_counter.js"></script>
+</body>
+</html>
+
