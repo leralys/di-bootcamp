@@ -25,9 +25,9 @@ class Video {
 }
 
 let video1 = new Video('Interstellar', 'Bill', 10027);
-// video1.watch();
+video1.watch();
 let video2 = new Video('A Clockwork Orange', 'Stacey', 8220);
-// video2.watch();
+video2.watch();
 
 // Bonus: Use an array to store data for five Video instances (ie. title, uploader, time)
 // Think of the best data structure to save this information within the array.
