@@ -61,11 +61,14 @@ function deleteAll() {
 function deleteImage() {
     this.previousSibling.remove();
     this.remove();
+    if (document.querySelectorAll('img').length < 1) {
+        document.querySelector('button').remove();
+    };
 }
 
 function appendDeleteAllBtn() {
     let imgAmount = document.querySelectorAll('img').length;
-    if (imgAmount > 1) {
+    if (imgAmount === 1) {
         let deleteAllBtn = document.createElement('button');
         deleteAllBtn.innerText = 'Delete All';
         h5.innerText = '';
