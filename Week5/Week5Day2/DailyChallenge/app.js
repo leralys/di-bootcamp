@@ -26,6 +26,7 @@ const findGif = async (string) => {
     try {
         const res = await fetch(`https://api.giphy.com/v1/gifs/random?rating=g&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My&tag=${string}`);
         const responceData = await res.json();
+        console.log(responceData.data.images)
         let imgObj = {
             url: responceData.data.images.downsized.url,
             title: responceData.data.title,
@@ -43,12 +44,13 @@ function appendGif(obj) {
     let img = document.createElement('img');
     img.src = obj.url;
     img.alt = obj.title;
-    let deleteImg = document.createElement('button');
-    deleteImg.innerText = 'Delete';
-    h5.innerText = ''
+    let deleteImgBtn = document.createElement('button');
+    deleteImgBtn.innerText = 'Delete';
+    h5.innerText = '';
+    img.style.width = '200px';
     document.body.append(img);
-    img.after(deleteImg);
-    deleteImg.addEventListener('click', deleteImage);
+    img.after(deleteImgBtn);
+    deleteImgBtn.addEventListener('click', deleteImage);
 }
 
 function deleteAll() {
