@@ -13,12 +13,11 @@ let testArray2 = ['avocado', 'tomato', 'cucumber', 1];
 
 const makeAllCaps = arr => {
     return new Promise(resolve => {
-        let uppercasedArray = [];
-        arr.forEach(el => {
+        let uppercasedArray = arr.map(el => {
             if (!isNaN(el)) {
                 throw new Error('contains not just strings')
             }
-            uppercasedArray.push(el.toUpperCase());
+            return el.toUpperCase();
         })
         resolve(uppercasedArray);
     })
@@ -37,11 +36,11 @@ const sortWords = arr => {
 //     .catch(err => console.log(err));
 
 // makeAllCaps(testArray2)
-//     .then(uppercased => {
-//         sortWords(uppercased)
-//             .then(sorted => console.log(sorted))
-//     })
-//     .catch(err => console.log(err));
+// .then(uppercased => {
+//     sortWords(uppercased)
+//         .then(sorted => console.log(sorted))
+// })
+// .catch(err => console.log(err));
 
 
 // TEST
@@ -134,14 +133,16 @@ let morse = `{
 
 function toJs(jsonString) {
     return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            jsObj = JSON.parse(jsonString);
-            if (Object.keys(jsObj).length > 0) resolve(jsObj);
-            else reject('empty object');
-        }, 3000)
+        let jsObj = JSON.parse(jsonString);
+        if (Object.keys(jsObj).length > 0) {
+            resolve(jsObj);
+        }
+        else {
+            reject('empty object');
+        }
     })
 }
-
+// could use String.prototype.replaceAll()
 function toMorse(morseJsObj) {
     return new Promise((resolve, reject) => {
         let arrMorse = [];
@@ -169,8 +170,6 @@ function joinWords(arrayOfMorse) {
             let p = document.createElement('p');
             p.innerText = el;
             h5.after(p);
-            let br = document.createElement('br')
-            p.after(br);
         })
         resolve();
     })
@@ -188,9 +187,8 @@ toJs(morse)
     .then(toMorse)
     .then(joinWords)
     .catch(error => console.log(error))
-
 // BAD TEST
-// toJs('')
+// toJs('{}')
 //     .then(toMorse)
-//     .then(result => console.log(result))
+//     .then(joinWords)
 //     .catch(error => console.log(error))
