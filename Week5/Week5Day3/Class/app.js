@@ -135,3 +135,6 @@ const displayWord = word => {
 // # Part III
 // If the giphy API doesn't find a gif depending on the word (because the word can be strange),
 // then instead of displaying an empty image, display a gif that says "404 ERROR"
+
+
+
