@@ -10,16 +10,6 @@
 // In the Currency Layer API documentation provided above, check out the part : “Real-time Rates”.
 // This API will provide data needed to calculate exchange rates between currencies.
 
-// http://api.currencylayer.com/live?access_key=6b543e9294a71d26a6606f5449cf71a6&format=1
-// and this API key 6b543e9294a71d26a6606f5449cf71a6
-
-// http://api.currencylayer.com/list?access_key=053566e7e6aaa46e3429b84fdeaf40d6
-
-// // "live" - get the most recent exchange rate data
-// https://api.currencylayer.com/live
-// // "convert" - convert one currency to another  
-// https://api.currencylayer.com/convert?from=EUR&to=GBP&amount=100 
-
 const api = 'http://api.currencylayer.com/';
 
 
@@ -69,7 +59,7 @@ async function convert(event) {
 function appendResult(num) {
     let displayRes = document.querySelector('.display-result');
     let span = document.createElement('span');
-    span.innerText = num;
+    span.innerText = num.toFixed(2);
     displayRes.append(span);
 }
 
