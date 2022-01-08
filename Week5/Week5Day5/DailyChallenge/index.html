@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="conteiner">
+        <h1>Currency converter</h1>
+        <form name="currency-converter">
+            <div>
+                <label for="convert-from">From:</label>
+                <input list="currencies-list" id="convert-from" name="currencies-list" />
+            </div>
+            <div>
+                <label for="convert-from">To:</label>
+                <input list="currencies-list" id="convert-to" name="currencies-list" />
+            </div>
+            <div>
+                <label for="amount"></label>
+                <input id="amount" type="number" name="amount" value="0" autocomplete="off" step="0.01" required>
+            </div>
+            <input type="submit" value="Convert">
+            <div class="display-result"></div>
+        </form>
+    </main>
+    </form>
+</body>
+
+</html>
