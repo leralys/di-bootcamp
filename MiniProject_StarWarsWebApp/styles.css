@@ -1,0 +1,223 @@
+@font-face {
+  font-family: "SfDistantGalaxy-0l3d";
+  src: url("./fonts/SfDistantGalaxy-0l3d.ttf");
+}
+@font-face {
+  font-family: "Righteous";
+  src: url("./fonts/Righteous-Regular.ttf");
+}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap"); */
+:root {
+  --font-epic: "SfDistantGalaxy-0l3d", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+  --font-righteous: "Righteous", cursive;
+  --color-black: #000;
+  --color-white: hsla(0, 0%, 100%, 0.85);
+  --color-yellow: #ffe81f;
+  --color-orange: #ff6b08;
+  --color-pink: #f32170;
+  --color-red: rgba(255, 0, 0, 0.8);
+  --color-blue: rgba(0, 0, 255, 0.7);
+  --color-violet: #9880ff;
+  --background-gradient: linear-gradient(
+      45deg,
+      var(--color-red),
+      var(--color-blue)
+    )
+    border-box;
+  --background-text-gradient: linear-gradient(
+    to bottom,
+    var(--color-white),
+    var(--color-yellow),
+    var(--color-orange),
+    var(--color-black)
+  );
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: black;
+  background-image: url("https://i.giphy.com/media/TxVVB6PfWMjE4/200.webp");
+}
+
+/* logo star wars */
+#header h1 {
+  color: var(--color-yellow);
+  font-family: var(--font-epic);
+  font-size: 5rem;
+  text-align: center;
+  background: var(--background-text-gradient);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+#header {
+  margin-bottom: 1rem;
+}
+
+/* wraps content of the page*/
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 75vw;
+  min-width: 185px;
+  margin: 0 auto;
+  margin-top: 50px;
+  align-items: center;
+}
+
+/* info box */
+.main-content {
+  border-radius: 1rem;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  font-size: 1.2em;
+  font-family: var(--font-roboto);
+  align-content: center;
+  flex-direction: column;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  padding: 2em;
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  background: var(--background-gradient);
+}
+.main-content p {
+  color: var(--color-white);
+}
+/* subtitle */
+.main-content span {
+  color: var(--color-yellow);
+  font-weight: 500;
+}
+/* header of the info box */
+.main-content #person-header,
+.main-content h2 {
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-family: var(--font-righteous), var(--font-roboto), sans-serif;
+  color: var(--color-yellow);
+}
+/* header of the error message */
+.main-content h2 {
+  font-size: 1.5em;
+}
+
+/* fetch person */
+.btn-container {
+  margin-top: 0.3em;
+  display: flex;
+  width: 40vw;
+  justify-content: center;
+}
+.btn {
+  margin: 0 10px;
+  padding: 0.3em 1.2em;
+  border-radius: 2em;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--color-white);
+  background-color: rgba(0, 0, 0, 0.01);
+  border: 2px solid var(--color-yellow);
+  transition: all 0.2s;
+  outline: none;
+}
+.btn:hover {
+  background: var(--background-gradient);
+  color: var(--color-yellow);
+  border: 2px solid var(--color-black);
+}
+
+/* display while await for responce of the api*/
+.onloading-class {
+  align-items: center;
+}
+.loading {
+  display: flex;
+  align-items: flex-end;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+.loading p {
+  margin-right: 0.5rem;
+}
+.loading .dots-flashing {
+  color: var(--color-white);
+  animation: dotFlashing 1s infinite linear alternate;
+  animation-delay: 0.5s;
+}
+.onloading-class i {
+  display: block;
+  font-size: 3.5em;
+  color: var(--color-yellow);
+}
+
+@keyframes dotFlashing {
+  0% {
+    color: var(--color-white);
+  }
+  50% {
+    color: var(--color-red);
+  }
+  100% {
+    color: var(--color-yellow);
+  }
+}
+/* for big screen */
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 50vw;
+  }
+  .btn-container {
+    width: 60vw;
+  }
+}
+/* for small screen  */
+@media screen and (max-width: 300px) {
+  #header h1 {
+    font-size: 3rem;
+  }
+  #header {
+    margin-bottom: 2rem;
+  }
+  .btn-container {
+    margin-top: 1em;
+  }
+  .main-content {
+    font-size: 0.8em;
+  }
+  .main-content #person-header {
+    font-size: 1.8em;
+  }
+  .main-content h2 {
+    font-size: 1.2em;
+  }
+  .main-content #header,
+  .main-content h2 {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .btn-container {
+    flex-direction: column;
+    width: 80vw;
+    font-size: 1rem;
+  }
+  .btn {
+    margin-bottom: 8px;
+  }
+  .container {
+    max-height: 100vh;
+  }
+}
