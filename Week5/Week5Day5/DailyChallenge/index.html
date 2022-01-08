@@ -16,18 +16,29 @@
         <form name="currency-converter">
             <div>
                 <label for="convert-from">From:</label>
-                <input list="currencies-list" id="convert-from" name="currencies-list" />
+                <input list="convert-from" id="from" name="convertFrom" required />
             </div>
             <div>
-                <label for="convert-from">To:</label>
-                <input list="currencies-list" id="convert-to" name="currencies-list" />
+                <label for="convert-to">To:</label>
+                <input list="currencies-list" id="convert-to" name="currenciesList" autocomplete="off" required />
             </div>
             <div>
                 <label for="amount"></label>
-                <input id="amount" type="number" name="amount" value="0" autocomplete="off" step="0.01" required>
+                <input id="amount" type="number" name="amount" value="0" autocomplete="off" step="1" min="1" required>
             </div>
-            <input type="submit" value="Convert">
+            <input type="submit" value="Convert" name="convert">
             <div class="display-result"></div>
+
+            <datalist id="convert-from">
+                <option value="USD - United States Dollar"></option>
+            </datalist>
+            <!-- <datalist id="currencies-list">
+                <option value="Chrome"></option>
+                <option value="Edge"></option>
+                <option value="Firefox"></option>
+                <option value="Opera"></option>
+                <option value="Safari"></option>
+            </datalist> -->
         </form>
     </main>
     </form>

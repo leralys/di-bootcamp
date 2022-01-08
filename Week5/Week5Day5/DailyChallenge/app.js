@@ -15,15 +15,21 @@
 
 // http://api.currencylayer.com/list?access_key=053566e7e6aaa46e3429b84fdeaf40d6
 
+// // "live" - get the most recent exchange rate data
+// https://api.currencylayer.com/live
+// // "convert" - convert one currency to another  
+// https://api.currencylayer.com/convert?from=EUR&to=GBP&amount=100 
+
+const api = 'http://api.currencylayer.com/';
+
+
 const form = document.forms[0];
 
 async function fetchList() {
     try {
-        const responce = await fetch('http://api.currencylayer.com/list?access_key=053566e7e6aaa46e3429b84fdeaf40d6');
+        const responce = await fetch(`${api}list?access_key=053566e7e6aaa46e3429b84fdeaf40d6`);
         const data = await responce.json();
         return data.currencies;
-        // console.log(currencies);
-        // return await responce.currencies.json();
     }
     catch (e) {
         console.log('Oh no!', e);
@@ -31,8 +37,7 @@ async function fetchList() {
 
 }
 
-
-async function attachCurrenciesList() {
+(async function attachCurrenciesList() {
     const respData = await fetchList();
     const datalist = document.createElement('datalist');
     datalist.id = 'currencies-list';
@@ -42,26 +47,38 @@ async function attachCurrenciesList() {
         datalist.append(option);
         form.appendChild(datalist)
     }
+})()
+
+async function convert(event) {
+    event.preventDefault();
+    const from = document.querySelector('#from').value.slice(0, 3);
+    const to = document.querySelector('#convert-to').value.slice(0, 3);
+    const amount = Number(document.querySelector('#amount').value);
+    try {
+        const responce = await fetch(`${api}live?access_key=053566e7e6aaa46e3429b84fdeaf40d6`);
+        const data = await responce.json();
+        const quote = data.quotes[`${from}${to}`];
+        let result = quote * amount;
+        appendResult(result);
+    }
+    catch (e) {
+        console.log('Oh no!', e);
+    }
 }
 
-attachCurrenciesList();
+function appendResult(num) {
+    let displayRes = document.querySelector('.display-result');
+    let span = document.createElement('span');
+    span.innerText = num;
+    displayRes.append(span);
+}
 
-// let values = {
-//     1: 'Firefox',
-//     2: 'Chrome',
-//     3: 'Opera',
-//     4: 'Safari',
-//     5: 'Edge'
-// };
-// attachCurrenciesList();
-// const datalist = document.createElement('datalist');
-// datalist.id = 'currencies-list';
-// for (val in values) {
-//     let option = document.createElement('option');
-//     option.value = `${val} - ${values[val]}`;
-//     datalist.append(option);
-//     form.appendChild(datalist)
-// }
+(function eventListeners() {
+    form.addEventListener('submit', convert);
+})()
+
+// window.addEventListener('load', () => attachCurrenciesList);
+
 
 
 
