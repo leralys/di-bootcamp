@@ -77,7 +77,6 @@ function appendResult(num) {
     form.addEventListener('submit', convert);
 })()
 
-// window.addEventListener('load', () => attachCurrenciesList);
 
 
 
