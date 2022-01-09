@@ -138,5 +138,3 @@ function todo() {
     const btnFindSpecies = document.querySelector("#btn-find-species");
     btnFindSpecies.addEventListener('click', todo);
 })();
-
-

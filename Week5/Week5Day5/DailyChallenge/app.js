@@ -1,5 +1,3 @@
-
-
 // Note
 // The program should take the currency which the user currently has and the currency in which they would like to receive, as well as the amount of money.
 // Afterwards, the program will output the correct exchange rate based on the data from the APIs.
@@ -66,9 +64,3 @@ function appendResult(num) {
 (function eventListeners() {
     form.addEventListener('submit', convert);
 })()
-
-
-
-
-
-
