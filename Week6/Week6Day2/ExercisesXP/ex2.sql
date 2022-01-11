@@ -57,10 +57,11 @@
 -- ORDER BY customer.customer_id ASC;
 
 -- You need to check your inventory. Write a query to get all the movies which are not in inventory.
--- SELECT title
+-- SELECT title, inventory.inventory_id, film.film_id
 -- FROM film
--- LEFT JOIN inventory
--- ON inventory.inventory_id = film.film_id;
+-- INNER JOIN inventory
+-- ON inventory.inventory_id = film.film_id
+-- WHERE film.film_id NOT IN (SELECT inventory.inventory_id FROM inventory);
 
 -- Write a query to find which city is in which country.
 -- SELECT city, country
