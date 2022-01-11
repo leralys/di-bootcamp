@@ -64,13 +64,10 @@
 -- Create a purchase for Scott Scott – he bought a hard drive
 -- INSERT INTO items (item, price) VALUES ('Hard drive', 500) RETURNING *;
 
--- INSERT INTO purchases (customer_id)
--- SELECT customer_id FROM customers WHERE last_name = 'Scott' AND first_name = 'Scott' RETURNING *;
--- 3
+-- INSERT INTO purchases (customer_id, item_id)
+-- VALUES (( SELECT customer_id FROM customers WHERE last_name = 'Scott' AND first_name = 'Scott'),
+-- 		(SELECT item_id FROM items WHERE item = 'Hard drive'));
 
--- UPDATE purchases
--- SET item_id = (SELECT item_id FROM items WHERE item = 'Hard drive')
--- WHERE customer_id = (SELECT customer_id FROM customers WHERE last_name = 'Scott' AND first_name = 'Scott');
 
 -- Use SQL to show all the customers who have made a purchase. Show the following fields/columns:
 -- Customer first name
