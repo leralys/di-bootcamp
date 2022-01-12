@@ -26,7 +26,13 @@
 -- SELECT last_name FROM employees WHERE SUBSTRING(last_name, 3, 1)='e';
 
 -- Write a query to display the jobs/designations available in the employees table.
--- I don't understand the meaning of this task
+-- I don't understand completely what i nedeed to do here
+-- SELECT job_title
+-- FROM employees
+-- INNER JOIN jobs
+-- ON jobs.job_id = employees.job_id
+-- ORDER BY job_title ASC;
+
 
 -- Write a query to select all information of employees whose last name is either ‘JONES’ or ‘BLAKE’ or ‘SCOTT’ or ‘KING’ or ‘FORD’.
 -- SELECT * FROM employees WHERE last_name IN ('Jones', 'Blake', 'Scott', 'King', 'Ford');
