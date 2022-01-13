@@ -52,12 +52,16 @@
 -- UPDATE employee SET job = 'ANALYST' WHERE emplname = 'FAULKNER' RETURNING *;
 
 -- 1. How many employees are in dept 10.
+-- SELECT COUNT(*) FROM EMPLOYEE WHERE DEPTCODE = 10;
 
 -- 2. How many employees are analyst in dept 10.
+-- SELECT COUNT(*) FROM EMPLOYEE WHERE DEPTCODE = 10 AND Job = 'ANALYST';
 
 -- 3. Display the names of each employees, their job and dept location
+-- SELECT empfname, emplname, job, deptcode FROM EMPLOYEE;
 
 -- 4. Find the avg salary of the software engineers
+-- SELECT AVG(salary) FROM EMPLOYEE WHERE job = 'SOFTWARE ENGINEER';
 
 -- 5. Which join should we use to display the employee 9777 even if he has no deptcode?
 
@@ -67,4 +71,5 @@
 -- 7.  Display EMPFNAME and "TOTAL SALARY" for each employee (commission and salary)
 
 -- 8. Display MAX SALARY from the EMPLOYEE table.
+
 
