@@ -24,27 +24,6 @@ let show = JSON.parse(localStorage.getItem('list'));
 show.forEach(elem => {
     let daysLeft = calculateDaysLeft(elem.startDate, elem.endDate);
     console.log(daysLeft);
-
-
-
-    // let startDate = new Date(elem.startDate);
-    // let endDate = new Date(elem.endDate);
-    // let todayDate = new Date();
-    // let daysUntilStart = Math.ceil((startDate - todayDate) / 1000 / 60 / 60 / 24);
-    // let daysUntilEnd = Math.ceil((endDate - startDate) / 1000 / 60 / 60 / 24) + daysUntilStart;
-    // console.log('start', startDate);
-    // console.log('end', endDate);
-    // console.log('now', todayDate);
-    // console.log('untilStart', daysUntilStart);
-    // console.log('untilEnd', daysUntilEnd);
-
-
-    // console.log(today)
-    // days left from start
-    // console.log(startDate);
-    // console.log(endDate);
-    // let result = (endDate - startDate) / 1000 / 60 / 60 / 24;
-    // console.log(result)
 });
 
 
