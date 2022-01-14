@@ -15,8 +15,8 @@ class Task {
         this.task = task;
         this.description = description;
         this.startDate = startDate;
-        this.endDate = endDate,
-            this.isCompleted = false;
+        this.endDate = endDate;
+        this.isCompleted = false;
     }
 }
 
