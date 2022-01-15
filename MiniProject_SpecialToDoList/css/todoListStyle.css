@@ -1,19 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,700&display=swap");
 
+:root {
+  --color-blue: #435f7a;
+  --color-light-grey: #9a9999;
+  --color-dark-grey: #ffffff33;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-red: #902323;
+  --color-green: #437a78;
+  --font-nunito: "Nunito", sans-serif;
+}
 html {
-  background: #435f7a;
-  background: linear-gradient(to bottom, #435f7a, #9a9999);
+  background: var(--color-blue);
+  background: linear-gradient(
+    to bottom,
+    var(--color-blue),
+    var(--color-light-grey)
+  );
   background-attachment: fixed;
 }
 
 * {
   box-sizing: border-box;
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-nunito);
   margin: 0;
   padding: 0;
 }
 header {
-  color: white;
+  color: var(--color-white);
   font-size: 1.2rem;
   width: 100vw;
   min-height: 60px;
@@ -30,16 +44,16 @@ header {
 a.btn {
   display: inline-block;
   padding: 0.2em 1em;
-  border: 0.1em solid #fff;
+  border: 0.1em solid var(--color-white);
   border-radius: 1.2em;
   text-decoration: none;
-  color: #fff;
+  color: var(--color-white);
   text-align: center;
   transition: all 0.2s;
 }
 a.btn:hover {
-  color: #000;
-  background-color: #fff;
+  color: var(--color-black);
+  background-color: var(--color-white);
 }
 
 /* cobtainers for the tasks */
@@ -56,7 +70,7 @@ a.btn:hover {
 
 /* task */
 .task-li {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--color-dark-grey);
   padding: 1em;
   border-radius: 1em;
   margin: 0.2em 0;
@@ -72,7 +86,7 @@ a.btn:hover {
 
 /* delete and edit icons */
 .task-li .far {
-  color: hsl(0, 61%, 35%);
+  color: var(--color-red);
 }
 
 /* task description */
@@ -81,4 +95,10 @@ a.btn:hover {
 }
 .hidden {
   display: block;
+}
+
+.task-completed {
+  background: var(--color-green);
+  opacity: 0.5;
+  text-decoration: line-through;
 }

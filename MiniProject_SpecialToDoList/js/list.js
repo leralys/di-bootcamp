@@ -21,7 +21,7 @@
 // Add an “Edit” button next to each task. The user can edit a task and save the changes. Another possibility is to double click on the task to edit the details.
 
 const mainContainer = document.querySelector('.main-container');
-
+let tasksToShow;
 
 //takes start and end dates of the task and calculates how many days left until end, depending on today's date
 const calculateDaysLeft = (start, end) => {
@@ -85,7 +85,7 @@ const createTaskDesc = (descStr) => {
 
 //checks if we have todo's in the local storage, if yes, loops over them and appends them to the page
 const appendTask = () => {
-    let tasksToShow = JSON.parse(localStorage.getItem('list'));
+    tasksToShow = JSON.parse(localStorage.getItem('list'));
     //sort array of tasks according to their start date in asc order
     tasksToShow.sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
     tasksToShow.forEach((elem, index) => {
@@ -114,8 +114,16 @@ function toggleTaskDesc(e) {
 }
 
 
-function taskCompleted() {
-    console.log('checkbox clicked');
+function taskCompleted(e) {
+    // change the status of isCompleted when clicking on checkbox
+    if (tasksToShow[e.target.id].isCompleted == false) {
+        tasksToShow[e.target.id].isCompleted = true;
+        localStorage.setItem('list', JSON.stringify(tasksToShow));
+    } else {
+        tasksToShow[e.target.id].isCompleted = false;
+        localStorage.setItem('list', JSON.stringify(tasksToShow));
+    }
+    e.target.parentNode.parentNode.classList.toggle('task-completed');
 }
 
 function deleteTask() {

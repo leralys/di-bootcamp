@@ -52,7 +52,3 @@ const addSubmitListener = (() => {
     const submitFrom = document.forms[0];
     submitFrom.addEventListener('submit', saveTask);
 })();
-
-
-// TODO
-// add some erro checking for the form
