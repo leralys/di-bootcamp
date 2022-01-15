@@ -3,7 +3,7 @@
 :root {
   --color-blue: #435f7a;
   --color-light-grey: #9a9999;
-  --color-dark-grey: #ffffff33;
+  --color-dark-grey: #ffffff78;
   --color-white: #fff;
   --color-black: #000;
   --color-red: #9023235c;
@@ -34,9 +34,15 @@ header {
   width: 100vw;
   min-height: 60px;
   display: flex;
-  padding-right: 20px;
-  justify-content: flex-end;
+  padding: 0 50px;
+
+  justify-content: space-between;
   align-items: center;
+}
+
+#logo {
+  font-size: 2rem;
+  font-weight: 800;
 }
 
 .btn {
@@ -56,9 +62,12 @@ header {
 }
 
 .content-wrapper {
-  width: 50vw;
+  max-width: 500px;
   height: 70vh;
   margin: 20px auto;
+  font-size: 1.5rem;
+  background: var(--color-dark-grey);
+  border-radius: 1em;
 }
 
 .form-column {
@@ -66,5 +75,13 @@ header {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: var(--color-dark-grey);
+  padding: 1em;
+  justify-content: space-around;
+}
+.form-column input {
+  font-size: 1.5rem;
+  padding: 0.2em 1em;
+  min-width: 450px;
+  outline: none;
+  color: var(--color-black);
 }

@@ -2,8 +2,9 @@
 
 :root {
   --color-blue: #435f7a;
+  --color-bright-blue: #2626d9;
   --color-light-grey: #9a9999;
-  --color-dark-grey: #ffffff33;
+  --color-dark-grey: #ffffff78;
   --color-white: #fff;
   --color-black: #000;
   --color-red: #9023235c;
@@ -38,11 +39,7 @@ header {
   align-items: center;
 }
 
-#logo {
-  font-size: 2rem;
-  font-weight: 800;
-}
-a.btn {
+.btn {
   display: inline-block;
   padding: 0.2em 1em;
   border: 0.1em solid var(--color-white);
@@ -52,16 +49,18 @@ a.btn {
   text-align: center;
   transition: all 0.2s;
 }
-a.btn:hover {
+.btn:hover {
   color: var(--color-black);
   background-color: var(--color-white);
 }
+.btn.mrgn-right {
+  margin-right: 1em;
+}
 
-/* cobtainers for the tasks */
+/* container for the tasks */
 .main-container {
-  width: 500px;
-  height: 900px;
-  margin: 0 auto;
+  max-width: 500px;
+  margin: 0 auto 20px;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -84,32 +83,44 @@ a.btn:hover {
   height: 1.2em;
   cursor: pointer;
 }
+.task-li-name {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+}
+.task-li-name label {
+  width: 80%;
+  margin: 0 4px 0 10px;
+}
+.task-li-description {
+  word-wrap: break-word;
+  display: none;
+}
+.hidden {
+  display: block;
+}
+/* overdue task*/
+.task-passed {
+  background: var(--color-red);
+}
+/* completed task */
+.task-completed {
+  background: var(--color-green);
+  opacity: 0.5;
+  text-decoration: line-through;
+}
 
 /* delete and edit icons */
 .task-li .far {
   color: var(--color-black);
   transition: all 0.3s;
 }
+.far.fa-edit {
+  margin-right: 5px;
+}
 .far.fa-edit:hover {
-  color: var(--color-light-grey);
+  color: var(--color-bright-blue);
 }
 .far.fa-times-circle:hover {
   color: var(--color-bright-red);
-}
-
-/* task description */
-.task-li-description {
-  display: none;
-}
-.hidden {
-  display: block;
-}
-.task-passed {
-  background: var(--color-red);
-}
-
-.task-completed {
-  background: var(--color-green);
-  opacity: 0.5;
-  text-decoration: line-through;
 }

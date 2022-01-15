@@ -51,6 +51,8 @@ const createTaskHeader = (indx, nameStr, isCompl) => {
     iconDelete.classList.add('far', 'fa-times-circle');
     // checkbox listener
     checkbox.addEventListener('click', taskComplete);
+    // edit icon listener
+    iconEdit.addEventListener('click', editTask);
     // delete icon listener
     iconDelete.addEventListener('click', deleteTask);
     taskHeader.append(checkbox, label, iconEdit, iconDelete);
@@ -101,8 +103,8 @@ const appendTask = () => {
         }
         let taskLiDates = createTaskDates(elem.startDate, daysLeft);
         let taskLiDesc = createTaskDesc(elem.description);
-        taskLiDates.addEventListener('click', toggleTaskDesc);
-        taskLiDesc.addEventListener('click', toggleTaskDesc);
+        taskLiDates.addEventListener('click', toggleTaskDescription);
+        taskLiDesc.addEventListener('click', toggleTaskDescription);
         taskLi.classList.add('task-li');
         if (elem.isCompleted) {
             taskLi.classList.add('task-completed');
@@ -112,10 +114,20 @@ const appendTask = () => {
     })
 }
 
+const appendDeleteButton = () => {
+    let btnDeleteAll = document.createElement('a');
+    let nav = document.querySelector('nav');
+    btnDeleteAll.id = 'delete-all';
+    btnDeleteAll.classList.add('btn', 'mrgn-right');
+    btnDeleteAll.innerText = 'Delete all';
+    btnDeleteAll.addEventListener('click', deleteAll);
+    nav.prepend(btnDeleteAll);
+}
+
 // -- callback functions for eventlisteners --
 
 // when click on dates /OR description, -> show / hide description
-function toggleTaskDesc(e) {
+function toggleTaskDescription(e) {
     if (this.nextSibling != null) {
         this.nextSibling.classList.toggle('hidden');
     } else {
@@ -123,9 +135,9 @@ function toggleTaskDesc(e) {
     }
 }
 
-
+// change the status of task when click on checkbox/label
 function taskComplete(e) {
-    // change the status of isCompleted when clicking on checkbox
+    // if it's not already - set isCompleted to true
     if (tasksToShow[e.target.id].isCompleted == false) {
         tasksToShow[e.target.id].isCompleted = true;
         localStorage.setItem('list', JSON.stringify(tasksToShow));
@@ -137,12 +149,25 @@ function taskComplete(e) {
     taskToComplete.classList.toggle('task-completed');
 }
 
+//when click on delete icon - delete this task
 function deleteTask(e) {
     let todoName = e.target.parentNode.innerText;
     tasksToShow = tasksToShow.filter(obj => obj.task != todoName);
     e.target.parentNode.parentNode.remove();
     localStorage.setItem('list', JSON.stringify(tasksToShow));
 }
+//edit task - needs to be redone
+function editTask(e) {
+    window.location.href = "./index.html";
+}
+//deletes all tasks
+function deleteAll() {
+    let taskLis = document.querySelectorAll('.task-li');
+    taskLis.forEach(el => el.remove());
+    localStorage.clear();
+    document.querySelector('#delete-all').remove();
+}
+
 
 // initialization - show tasks if we have any
 const checkLocalStorage = (() => {
@@ -150,11 +175,11 @@ const checkLocalStorage = (() => {
         return;
     } else {
         appendTask();
+        appendDeleteButton();
     }
 })();
 
+
 // todo
 
-// form styles
 // modal before delete
-// add edit functionality

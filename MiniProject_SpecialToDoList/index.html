@@ -11,28 +11,18 @@
 </head>
 
 <body>
-    <!-- 
-In the HTML file, create a form to add a new task. The form should contain a few inputs:
-
-Name
-Description
-Start date and time
-End date and time
-A submit button -->
-
     <header>
+        <span id="logo">TODO List v.2</span>
         <nav>
             <a href="/todolist.html" class="btn">Go to my todo list</a>
         </nav>
     </header>
-
-
     <main class="content-wrapper">
         <form class="form-column">
             <div>
                 <label for="todo-name">Name</label>
                 <input type="text" id="todo-name" name="todo-name" class="clear-me" autocomplete=off
-                    placeholder="title of the task" required>
+                    placeholder="title of the task" maxlength="20" required>
             </div>
             <div>
                 <label for="description">Description</label>
@@ -53,6 +43,7 @@ A submit button -->
                 <input type="submit" value="Save task" class="btn">
             </div>
         </form>
+        <div id="overlay"></div>
     </main>
 
 </body>
