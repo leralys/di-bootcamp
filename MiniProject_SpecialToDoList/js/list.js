@@ -27,8 +27,8 @@ const mainContainer = document.querySelector('.main-container');
 const calculateDaysLeft = (start, end) => {
     let startD = new Date(start);
     let endD = new Date(end);
-    let todayD = new Date();
-    let daysUntilStart = Math.ceil((startD - todayD) / 1000 / 3600 / 24);
+    let today = new Date();
+    let daysUntilStart = Math.ceil((startD - today) / 1000 / 3600 / 24);
     let daysUntilEnd = Math.ceil((endD - startD) / 1000 / 3600 / 24) + daysUntilStart;
     // if we have negative num of days left - show that we have 0 days left instead
     daysUntilEnd < 0 ? daysUntilEnd = 0 : daysUntilEnd;
@@ -82,12 +82,12 @@ const createTaskDesc = (descStr) => {
     return description;
 }
 
-// sort
 
 //checks if we have todo's in the local storage, if yes, loops over them and appends them to the page
 const appendTask = () => {
     let tasksToShow = JSON.parse(localStorage.getItem('list'));
-    console.log(tasksToShow);
+    //sort array of tasks according to their start date in asc order
+    tasksToShow.sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
     tasksToShow.forEach((elem, index) => {
         let taskLi = document.createElement('div');
         taskLi.classList.add('task-li');
@@ -130,3 +130,13 @@ const checkLocalStorage = (() => {
         appendTask();
     }
 })()
+// window.addEventListener('load', () => {
+//     if (localStorage.getItem('list') == null) {
+//         return;
+//     } else {
+//         console.log(localStorage.getItem('list'));
+//         // tasksToShow = tasksToShow.sort((a, b) => a.startDate - b.startDate);
+//         // tasksToShow = JSON.parse(localStorage.getItem('list'));
+//         // appendTask();
+//     }
+// });

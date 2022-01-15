@@ -25,16 +25,18 @@ A submit button -->
         <form class="form_column">
             <label for="todo-name">Name</label>
             <input type="text" id="todo-name" name="todo-name" class="clear-me" autocomplete=off
-                placeholder="title of the task">
+                placeholder="title of the task" required>
 
             <label for="description">Description</label>
             <input type="text" id="todo-description" name="description" class="clear-me" autocomplete=off
                 placeholder="description of the task">
 
             <label for="todo-start">Start date:</label>
-            <input type="date" id="todo-start" name="todo-start" class="clear-me" min="2022-01-01" max="2025-12-31">
+            <input type="date" id="todo-start" name="todo-start" class="clear-me" min="2020-01-01" max="2025-12-31"
+                required>
             <label for="todo-end">End date:</label>
-            <input type="date" id="todo-end" name="todo-end" class="clear-me" min="2022-01-01" max="2025-12-31">
+            <input type="date" id="todo-end" name="todo-end" class="clear-me" min="2020-01-01" max="2025-12-31"
+                required>
             <input type="submit" value="Save task" class="btn">
         </form>
         <section class="form-footer">
