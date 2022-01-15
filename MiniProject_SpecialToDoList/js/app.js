@@ -23,7 +23,6 @@ class Task {
 //checks if we have already tasks in the local storage, if not - creates a new array to save tasks
 const checkLocalStorage = () => {
     if (localStorage.getItem('list') != null) {
-        console.log(arrTodos);
         arrTodos = JSON.parse(localStorage.getItem('list'));
     } else {
         arrTodos = [];
@@ -39,6 +38,9 @@ function clearInputs() {
 // saves a new task to a local storage
 const saveTask = (e) => {
     e.preventDefault();
+    if (!description.value) {
+        description.value = 'no description';
+    }
     let taskToSave = new Task(task.value, description.value, startDate.value, endDate.value);
     checkLocalStorage();
     arrTodos.push(taskToSave);
