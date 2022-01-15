@@ -139,12 +139,7 @@ function taskComplete(e) {
 
 function deleteTask(e) {
     let todoName = e.target.parentNode.innerText;
-    // tasksToShow = tasksToShow.forEach((obj, index) => {
-    //     // console.log(obj)
-    //     if (obj.task == todoName) {
-    //         tasksToShow.splice(index, 1);
-    //     }
-    // })
+    tasksToShow = tasksToShow.filter(obj => obj.task != todoName);
     e.target.parentNode.parentNode.remove();
     localStorage.setItem('list', JSON.stringify(tasksToShow));
 }
