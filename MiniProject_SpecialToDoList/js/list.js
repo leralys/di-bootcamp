@@ -50,7 +50,7 @@ const createTaskHeader = (indx, nameStr, isCompl) => {
     iconDelete = document.createElement('i');
     iconDelete.classList.add('far', 'fa-times-circle');
     // checkbox listener
-    checkbox.addEventListener('click', taskCompleted);
+    checkbox.addEventListener('click', taskComplete);
     // delete icon listener
     iconDelete.addEventListener('click', deleteTask);
     taskHeader.append(checkbox, label, iconEdit, iconDelete);
@@ -124,7 +124,7 @@ function toggleTaskDesc(e) {
 }
 
 
-function taskCompleted(e) {
+function taskComplete(e) {
     // change the status of isCompleted when clicking on checkbox
     if (tasksToShow[e.target.id].isCompleted == false) {
         tasksToShow[e.target.id].isCompleted = true;
@@ -137,8 +137,16 @@ function taskCompleted(e) {
     taskToComplete.classList.toggle('task-completed');
 }
 
-function deleteTask() {
-    console.log('delete task clicked');
+function deleteTask(e) {
+    let todoName = e.target.parentNode.innerText;
+    // tasksToShow = tasksToShow.forEach((obj, index) => {
+    //     // console.log(obj)
+    //     if (obj.task == todoName) {
+    //         tasksToShow.splice(index, 1);
+    //     }
+    // })
+    e.target.parentNode.parentNode.remove();
+    localStorage.setItem('list', JSON.stringify(tasksToShow));
 }
 
 // initialization - show tasks if we have any
@@ -148,19 +156,9 @@ const checkLocalStorage = (() => {
     } else {
         appendTask();
     }
-})()
+})();
 
-
-
-
-
-// window.addEventListener('load', () => {
-//     if (localStorage.getItem('list') == null) {
-//         return;
-//     } else {
-//         console.log(localStorage.getItem('list'));
-//         // tasksToShow = tasksToShow.sort((a, b) => a.startDate - b.startDate);
-//         // tasksToShow = JSON.parse(localStorage.getItem('list'));
-//         // appendTask();
-//     }
-// });
+// todo
+// form styles
+// modal before delete
+// edit functionality

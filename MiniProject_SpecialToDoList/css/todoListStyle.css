@@ -6,7 +6,8 @@
   --color-dark-grey: #ffffff33;
   --color-white: #fff;
   --color-black: #000;
-  --color-red: #902323;
+  --color-red: #9023235c;
+  --color-bright-red: #902323;
   --color-green: #437a78;
   --font-nunito: "Nunito", sans-serif;
 }
@@ -86,7 +87,14 @@ a.btn:hover {
 
 /* delete and edit icons */
 .task-li .far {
-  color: var(--color-red);
+  color: var(--color-black);
+  transition: all 0.3s;
+}
+.far.fa-edit:hover {
+  color: var(--color-light-grey);
+}
+.far.fa-times-circle:hover {
+  color: var(--color-bright-red);
 }
 
 /* task description */
@@ -98,7 +106,6 @@ a.btn:hover {
 }
 .task-passed {
   background: var(--color-red);
-  opacity: 0.5;
 }
 
 .task-completed {
