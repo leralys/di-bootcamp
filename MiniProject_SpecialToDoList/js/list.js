@@ -36,22 +36,23 @@ const calculateDaysLeft = (start, end) => {
 }
 
 //creates task header (with checkbox, name, edit and delete buttons)
-const createTaskHeader = (indx, nameStr) => {
+const createTaskHeader = (indx, nameStr, isCompl) => {
     let taskHeader = document.createElement('div');
-    taskHeader.classList.add('task-li-name');
     let checkbox = document.createElement('input');
+    let label = document.createElement('label');
+    taskHeader.classList.add('task-li-name');
     checkbox.type = 'checkbox';
     checkbox.id = indx;
-    checkbox.classList.add('checkbox');
-    // checkbox listener
-    checkbox.addEventListener('click', taskCompleted);
-    let label = document.createElement('label');
+    //check the checkbox if the task was completed
+    isCompl ? checkbox.checked = true : checkbox.checked = false;
     label.setAttribute('for', indx);
     label.innerText = nameStr;
     iconEdit = document.createElement('i');
     iconEdit.classList.add('far', 'fa-edit');
     iconDelete = document.createElement('i');
     iconDelete.classList.add('far', 'fa-times-circle');
+    // checkbox listener
+    checkbox.addEventListener('click', taskCompleted);
     // delete icon listener
     iconDelete.addEventListener('click', deleteTask);
     taskHeader.append(checkbox, label, iconEdit, iconDelete);
@@ -61,13 +62,13 @@ const createTaskHeader = (indx, nameStr) => {
 //creates task div with start date and days left
 const createTaskDates = (dstart, left) => {
     let datesDiv = document.createElement('div');
-    datesDiv.classList.add('task-li-dates');
     let showStart = document.createElement('span');
+    let showLeft = document.createElement('span');
     //here we change the format of date displayed - it's gonna be dd/mm/yy
     let d = new Date(dstart);
     let dText = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear().toString().slice(2)}`;
-    showStart.innerText = `Started: ${dText}`;
-    let showLeft = document.createElement('span');
+    datesDiv.classList.add('task-li-dates');
+    showStart.innerText = `Start: ${dText}`;
     showLeft.innerText = `(${left} days left)`;
     datesDiv.append(showStart, showLeft);
     return datesDiv;
@@ -75,8 +76,8 @@ const createTaskDates = (dstart, left) => {
 
 const createTaskDesc = (descStr) => {
     let description = document.createElement('div');
-    description.classList.add('task-li-description');
     let p = document.createElement('p');
+    description.classList.add('task-li-description');
     p.innerText = descStr;
     description.append(p);
     return description;
@@ -90,13 +91,16 @@ const appendTask = () => {
     tasksToShow.sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
     tasksToShow.forEach((elem, index) => {
         let taskLi = document.createElement('div');
-        taskLi.classList.add('task-li');
-        let taskLiName = createTaskHeader(index, elem.task);
+        let taskLiName = createTaskHeader(index, elem.task, elem.isCompleted);
         let daysLeft = calculateDaysLeft(elem.startDate, elem.endDate);
         let taskLiDates = createTaskDates(elem.startDate, daysLeft);
-        taskLiDates.addEventListener('click', toggleTaskDesc);
         let taskLiDesc = createTaskDesc(elem.description);
+        taskLiDates.addEventListener('click', toggleTaskDesc);
         taskLiDesc.addEventListener('click', toggleTaskDesc);
+        taskLi.classList.add('task-li');
+        if (elem.isCompleted) {
+            taskLi.classList.add('task-completed');
+        }
         taskLi.append(taskLiName, taskLiDates, taskLiDesc);
         mainContainer.append(taskLi);
     })
@@ -138,6 +142,11 @@ const checkLocalStorage = (() => {
         appendTask();
     }
 })()
+
+
+
+
+
 // window.addEventListener('load', () => {
 //     if (localStorage.getItem('list') == null) {
 //         return;
