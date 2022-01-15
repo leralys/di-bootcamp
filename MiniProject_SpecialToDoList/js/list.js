@@ -154,6 +154,7 @@ const checkLocalStorage = (() => {
 })();
 
 // todo
+
 // form styles
 // modal before delete
-// edit functionality
+// add edit functionality
