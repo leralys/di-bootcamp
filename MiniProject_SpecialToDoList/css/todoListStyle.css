@@ -61,18 +61,24 @@ a.btn:hover {
   border-radius: 1em;
   margin: 0.2em 0;
 }
+.task-li > * {
+  cursor: pointer;
+}
 .task-li .checkbox {
   width: 1.2em;
   height: 1.2em;
   cursor: pointer;
 }
-/* delete icon */
-.task-li .fa-times-circle {
+
+/* delete and edit icons */
+.task-li .far {
   color: hsl(0, 61%, 35%);
-  cursor: pointer;
 }
+
 /* task description */
 .task-li-description {
-  transition: all 0.2s;
+  display: none;
+}
+.hidden {
   display: block;
 }
