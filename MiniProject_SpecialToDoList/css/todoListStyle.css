@@ -96,6 +96,10 @@ a.btn:hover {
 .hidden {
   display: block;
 }
+.task-passed {
+  background: var(--color-red);
+  opacity: 0.5;
+}
 
 .task-completed {
   background: var(--color-green);

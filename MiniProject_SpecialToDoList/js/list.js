@@ -30,8 +30,6 @@ const calculateDaysLeft = (start, end) => {
     let today = new Date();
     let daysUntilStart = Math.ceil((startD - today) / 1000 / 3600 / 24);
     let daysUntilEnd = Math.ceil((endD - startD) / 1000 / 3600 / 24) + daysUntilStart;
-    // if we have negative num of days left - show that we have 0 days left instead
-    daysUntilEnd < 0 ? daysUntilEnd = 0 : daysUntilEnd;
     return daysUntilEnd;
 }
 
@@ -93,6 +91,14 @@ const appendTask = () => {
         let taskLi = document.createElement('div');
         let taskLiName = createTaskHeader(index, elem.task, elem.isCompleted);
         let daysLeft = calculateDaysLeft(elem.startDate, elem.endDate);
+        // if we have negative num of days left -> the task end date passed before it was completed
+        // show that we have 0 days left to complete the task and make the task differenr color
+        if (daysLeft < 0) {
+            if (!taskLi.classList.contains('task-passed')) {
+                taskLi.classList.add('task-passed');
+            }
+            daysLeft = 0;
+        }
         let taskLiDates = createTaskDates(elem.startDate, daysLeft);
         let taskLiDesc = createTaskDesc(elem.description);
         taskLiDates.addEventListener('click', toggleTaskDesc);
@@ -127,7 +133,8 @@ function taskCompleted(e) {
         tasksToShow[e.target.id].isCompleted = false;
         localStorage.setItem('list', JSON.stringify(tasksToShow));
     }
-    e.target.parentNode.parentNode.classList.toggle('task-completed');
+    let taskToComplete = e.target.parentNode.parentNode;
+    taskToComplete.classList.toggle('task-completed');
 }
 
 function deleteTask() {
