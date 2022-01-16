@@ -178,8 +178,3 @@ const checkLocalStorage = (() => {
         appendDeleteButton();
     }
 })();
-
-
-// todo
-
-// modal before delete
