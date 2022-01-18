@@ -38,7 +38,7 @@ app.get('/form', (req, res) => {
 app.post('/formData', (req, res) => {
     console.log(req.body);
     const { email, message } = req.body;
-    res.send({ email, message });
+    res.send(`${email} sent you a message ${message}`);
 })
 
 app.get('*', (req, res) => {
