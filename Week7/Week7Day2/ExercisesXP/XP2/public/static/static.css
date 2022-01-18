@@ -1,0 +1,17 @@
+h1,
+p {
+  text-align: center;
+}
+h1 {
+  border: 1px dashed blue;
+  color: red;
+}
+p {
+  font-weight: 800;
+}
+#italic {
+  font-style: italic;
+}
+#btn {
+  color: blue;
+}

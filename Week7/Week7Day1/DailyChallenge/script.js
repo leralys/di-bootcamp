@@ -18,14 +18,14 @@ const b = 5;
 
 
 
-const requestListener = function (req, res) {
-    res.setHeader("Content-Type", "text/html");
-    res.writeHead(200);
-    res.end(`My Module is <br> ${main.largeNumber + b} <html><body><h1>Hi there at front end</h1></body></html>`);
-}
+// const requestListener = function (req, res) {
+//     res.setHeader("Content-Type", "text/html");
+//     res.writeHead(200);
+//     res.end(`My Module is <br> ${main.largeNumber + b} <html><body><h1>Hi there at front end</h1></body></html>`);
+// }
 
-const server = http.createServer(requestListener);
-server.listen(3000);
+// const server = http.createServer(requestListener);
+// server.listen(3000);
 
 // Part III:
 // Create a file named main.js and create a function that returns the current date and time. Export the module.
@@ -33,11 +33,11 @@ server.listen(3000);
 // Create a server with http, set the response header and respond with a message that outputs the current date and time from the exported module.
 // Your server should run on http://localhost:8080/
 
-const displayDateAndTime = function (req, res) {
-    res.setHeader("Content-Type", "text/html");
-    res.writeHead(200);
-    res.end(`<html><body><h3>${main.getCurrDateAndTime()}</h3></body></html>`);
-}
+// const displayDateAndTime = function (req, res) {
+//     res.setHeader("Content-Type", "text/html");
+//     res.writeHead(200);
+//     res.end(`<html><body><h3>${main.getCurrDateAndTime()}</h3></body></html>`);
+// }
 
-const server1 = http.createServer(displayDateAndTime);
-server1.listen(8080);
+// const server1 = http.createServer(displayDateAndTime);
+// server1.listen(8080);
