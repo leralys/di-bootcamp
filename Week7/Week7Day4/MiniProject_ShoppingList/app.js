@@ -12,11 +12,17 @@ app.use(cors());
 app.use('/', express.static(path.join(__dirname, '/public')));
 
 app.get('/list', (req, res) => {
-    res.send('ok there');
+    // console.log(fsmodule.getList());
+    let listObj = fsmodule.getList();
+    res.json(listObj);
 })
 app.post('/list', (req, res) => {
     console.log(req.body);
     fsmodule.appendToFile(req.body);
-    res.json('{"item":"banana","amount":"1"}');
-    // res.redirect('/list');
+    res.redirect('/list');
 })
+
+// app.post('/from', (req, res) => {
+//     res.redirect(307, '/to');
+//   });
+//   app.post('/to', (req, res) => res.send(req.body.message));

@@ -7,7 +7,7 @@ class Item {
     }
 }
 
-const sendData = (e) => {
+const sendData = async (e) => {
     e.preventDefault();
     const shopItem = document.getElementById('item').value.toLowerCase();
     const shopAmount = document.getElementById('amount').value;
@@ -21,12 +21,12 @@ const sendData = (e) => {
     console.log(shopItem, shopAmount)
     fetch('http://localhost:8080/list', {
         method: 'POST',
+        redirect: 'follow',
         headers: { 'Content-type': 'application/json' },
         body: JSON.stringify(new Item(shopItem, shopAmount))
     })
-        .then(res => res.json())
-        .then(data => console.log(data))
-        .catch(e => console.log(e))
+        .then(window.location.href = "/list")
+        .catch(err => console.log(err));
 }
 
 form.addEventListener('submit', sendData);
