@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="script.js" defer></script>
+  <title>Shopping List</title>
+</head>
+
+<body>
+  <h1>My Shopping List</h1>
+  <form action="http://localhost:8080/list" method="POST">
+    <label for="item">Item
+      <input id="item" type="text" name="item" autocomplete="off" placeholder="Item" required>
+    </label>
+    <label for="item">Amount
+      <input id="amount" type="number" name="amount" autocomplete="off" placeholder="Amount" min="1" required>
+    </label>
+    <input type="submit" value="SUBMIT">
+  </form>
+</body>
+
+</html>
