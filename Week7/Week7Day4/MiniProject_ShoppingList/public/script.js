@@ -18,14 +18,15 @@ const sendData = async (e) => {
     } else if (Number(shopAmount) != shopAmount || !isNaN(Number(shopItem))) {
         return;
     }
-    console.log(shopItem, shopAmount)
+    // fetch to a server with post request
     fetch('http://localhost:8080/list', {
         method: 'POST',
         redirect: 'follow',
         headers: { 'Content-type': 'application/json' },
         body: JSON.stringify(new Item(shopItem, shopAmount))
     })
-        .then(window.location.href = "/list")
+        // redirect
+        .then(window.location.href = "/mylist")
         .catch(err => console.log(err));
 }
 
