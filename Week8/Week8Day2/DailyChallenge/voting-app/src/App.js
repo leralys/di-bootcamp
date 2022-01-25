@@ -14,9 +14,9 @@ class App extends Component {
     };
   }
   addVote(idx) {
-    let newLanguages = [...this.state.languages]; //copy of array
-    newLanguages[idx].votes++; //update vote
-    this.setState({ languages: newLanguages }); //set new arr
+    let newLanguages = [...this.state.languages];
+    newLanguages[idx].votes++;
+    this.setState({ votes: newLanguages[idx].votes })
 
   }
   render() {
@@ -28,7 +28,7 @@ class App extends Component {
               <div key={index}>
                 <span>{el.votes}</span>
                 <span>{el.name}</span>
-                <button onClick={this.addVote.bind(this, index)}>Click Here</button>
+                <button onClick={() => this.addVote(index)}>Click Here</button>
               </div>
             )
           })
