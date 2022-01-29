@@ -1,4 +1,4 @@
-import React, { Children, Component } from 'react';
+import React, { Component } from 'react';
 import db from '../DB/db.json';
 import './Game.css';
 import Header from './Header';
@@ -38,10 +38,7 @@ class Game extends Component {
                     {
                         this.shuffle().map(obj => {
                             return (
-                                <Card key={obj.id} {...obj}
-                                    handleClick={this.handleClick}
-                                    incrementScore={this.incrementScore}
-                                    gameOver={this.gameOver} />
+                                <Card key={obj.id} {...obj} handleClick={this.handleClick} />
                             )
                         })
                     }
