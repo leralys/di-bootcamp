@@ -1,5 +1,3 @@
-import { INCREASE_COUNT, DECREASE_COUNT } from './actions'
-
 let initState = {
     count: 0
 }

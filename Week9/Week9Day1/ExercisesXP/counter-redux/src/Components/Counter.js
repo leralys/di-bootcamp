@@ -7,14 +7,6 @@ class Counter extends Component {
     constructor(props) {
         super(props);
     }
-    // increaseCounter = () => {
-    //     let { count } = this.props;
-    //     this.setState({ count: count + 1 })
-    // }
-    // decreaseCounter = () => {
-    //     let { count } = this.props;
-    //     this.setState({ count: count - 1 })
-    // }
     render() {
         const { count } = this.props;
         return (
