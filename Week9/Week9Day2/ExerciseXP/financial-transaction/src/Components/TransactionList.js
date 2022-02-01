@@ -12,6 +12,7 @@ import React, { Component } from 'react';
 import TransactionForm from './TransactionForm';
 import './TransactionList.css';
 import { connect } from 'react-redux';
+import { deleteTransaction, updateTransaction } from '../Redux/actions/transactionActions';
 
 // let transactions = [
 //     { accountNo: "Hello", FSC: "d", accHolder: "d", amount: "d" },
@@ -20,22 +21,20 @@ import { connect } from 'react-redux';
 // localStorage.setItem('transactions', JSON.stringify(transactions));
 
 const TransactionList = (props) => {
-    console.log(props);
     let rows;
     // let list = (JSON.parse(localStorage.getItem('transactions')));
-    if (props.list !== null || props.list !== undefined) {
+    if (props.list.length > 0) {
         rows = props.list.map((el, index) => {
             return <tr key={index} id={index}>
                 <td className="tableCell">{el.accountNo}</td>
                 <td className="tableCell">{el.FSC}</td>
                 <td className="tableCell">{el.accHolder}</td>
                 <td className="tableCell">{el.amount}</td>
-                <td className="tableCell"><button>Edit</button></td>
-                <td className="tableCell"><button>Delete</button></td>
+                <td className="tableCell"><button onClick={() => props.handleUpdate(index)}>Edit</button></td>
+                <td className="tableCell"><button onClick={() => props.handleDelete(index)}>Delete</button></td>
             </tr>
         })
-    } rows = [];
-    console.log(rows);
+    } else rows = [];
     return (
         <>
             <TransactionForm />
@@ -48,7 +47,6 @@ const TransactionList = (props) => {
                 </table>
             }
         </>
-
     );
 }
 const mapStateToProps = (state) => {
@@ -57,4 +55,11 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(TransactionList);
+const mapDispatchToProps = dispatch => {
+    return {
+        handleDelete: (index) => dispatch(deleteTransaction(index)),
+        handleUpdate: (index) => dispatch(updateTransaction(index))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TransactionList);

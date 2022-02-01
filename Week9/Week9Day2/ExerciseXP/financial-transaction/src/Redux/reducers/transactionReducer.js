@@ -16,12 +16,18 @@ let initialState = {
     list: JSON.parse(localStorage.getItem('transactions')) || []
 }
 
-function transactionReducer(state = initialState, action) {
+function transactionReducer(state = initialState, action = {}) {
     switch (action.type) {
         case INSERT:
-            return {
-                ...state, list: [...state.list, action.payload]
-            }
+            let newList = [...state.list, action.payload];
+            localStorage.setItem('transactions', JSON.stringify(newList));
+            return { ...state, list: newList }
+        case DELETE:
+            let filteredList = state.list.filter((el, index) => index !== action.payload);
+            localStorage.setItem('transactions', JSON.stringify(filteredList));
+            return { ...state, list: filteredList }
+        case UPDATE:
+            return { ...state }
         default:
             return { ...state }
     }

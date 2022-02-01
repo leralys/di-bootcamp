@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
+import logger from 'redux-logger';
 import reportWebVitals from './reportWebVitals';
 
 import transactionReducer from './Redux/reducers/transactionReducer';
-const store = createStore(transactionReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+const store = createStore(transactionReducer, applyMiddleware(logger));
 
 ReactDOM.render(
   <React.StrictMode>

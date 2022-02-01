@@ -7,26 +7,65 @@
 // Use mapDispatchToProps for the actions.insert and actions.update actions.
 // Use the connect() function from redux.
 
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { insertTransaction } from '../Redux/actions/transactionActions';
 
+// {accountNo: 'Hello', FSC: 'd', accHolder: 'd', amount: 'd'}
 
-function TransactionForm() {
-    return (
-        <form>
-            <input type="text" name="accountNumber" placeholder="Account Number" autoComplete="off" />
-            <br />
-            <input type="text" name="FSC" placeholder="FSC" autoComplete="off" />
-            <br />
-            <input type="text" name="ACHolderName" placeholder="A/C Holder Name" autoComplete="off" />
-            <br />
-            <input type="text" name="amount" placeholder="Amount" autoComplete="off" />
-            <br />
-            <button type="submit">Submit</button>
-        </form >
-    );
+class TransactionForm extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            accountNo: '',
+            FSC: '',
+            accHolder: '',
+            amount: ''
+        };
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    handleInputChange(e) {
+        this.setState({ [e.target.name]: e.target.value });
+    }
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.insertTransaction(this.state);
+        this.setState({ accountNo: '', FSC: '', accHolder: '', amount: '' })
+    }
+    render() {
+        return (
+            <form onSubmit={this.handleSubmit} >
+                <input onChange={this.handleInputChange}
+                    type="text" name="accountNo" placeholder="Account Number"
+                    autoComplete="off" value={this.state.accountNo} />
+                <br />
+                <input onChange={this.handleInputChange}
+                    type="text" name="FSC" placeholder="FSC"
+                    autoComplete="off" value={this.state.FSC} />
+                <br />
+                <input onChange={this.handleInputChange}
+                    type="text" name="accHolder" placeholder="A/C Holder Name"
+                    autoComplete="off" value={this.state.accHolder} />
+                <br />
+                <input onChange={this.handleInputChange}
+                    type="text" name="amount" placeholder="Amount"
+                    autoComplete="off" value={this.state.amount} />
+                <br />
+                <button type="submit">Submit</button>
+            </form >
+        );
+    }
 }
 
-export default TransactionForm;
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        insertTransaction: (transaction) => dispatch(insertTransaction(transaction))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(TransactionForm);
 
 
 
