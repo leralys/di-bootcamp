@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.MovieCard {
+  border: thin #c0c0c0 solid;
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  min-height: 100%;
+  background-color: #282c34;
+  color: #f8f9fa;
+}
+
+.MovieCard-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.MovieCard-description {
+  color: #f8f9fa;
+  padding: 1rem;
+}
+.MovieCard-description .myButton {
+  margin-top: 1rem;
+}

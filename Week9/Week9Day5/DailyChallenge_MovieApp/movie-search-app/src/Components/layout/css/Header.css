@@ -1,0 +1,19 @@
+.Header {
+  background: #282c34;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+}
+.Header-logo {
+  color: white;
+  font-size: 2rem;
+}
+#imdb {
+  color: #f5de50;
+  margin-right: 1rem;
+}
+#react {
+  color: #61dafb;
+}
