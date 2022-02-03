@@ -1,22 +1,21 @@
+import { connect } from 'react-redux';
 // components
 import Button from './layout/Button';
+// styles
 import './css/MovieCard.css';
-// <i class="fas fa-angle-right
 
 const MovieCard = (props) => {
-    console.log(props.arr)
     return (
         <>
             {
-                props.arr.map(el => {
+                props.data.map(el => {
                     return <div key={el.imdbID} className="MovieCard">
-                        <img className="MovieCard-image" src={el.Poster} />
+                        <img className="MovieCard-image" src={el.Poster} alt={el.Title} />
                         <div className="MovieCard-description">
                             <h4>{el.Title}</h4>
                             <p>{el.Year}</p>
                             <Button text="Details &#8680;" />
                         </div>
-
                     </div>
                 })
             }
@@ -24,4 +23,10 @@ const MovieCard = (props) => {
     )
 }
 
-export default MovieCard;
+const mapStateToProps = (state) => {
+    return {
+        data: state.data,
+    }
+}
+
+export default connect(mapStateToProps)(MovieCard);

@@ -5,13 +5,13 @@
 }
 
 .MovieCard {
-  border: thin #c0c0c0 solid;
   display: flex;
   flex-flow: column;
   width: 100%;
   min-height: 100%;
   background-color: #282c34;
   color: #f8f9fa;
+  padding: 10px;
 }
 
 .MovieCard-image {
@@ -23,7 +23,10 @@
 
 .MovieCard-description {
   color: #f8f9fa;
-  padding: 1rem;
+  padding: 1rem 1rem 10px;
+}
+.MovieCard-description h4 {
+  margin-bottom: 1rem;
 }
 .MovieCard-description .myButton {
   margin-top: 1rem;

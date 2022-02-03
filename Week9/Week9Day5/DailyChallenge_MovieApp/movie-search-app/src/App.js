@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 // components
 import Home from './Components/Home'
 // styles
