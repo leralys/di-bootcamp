@@ -27,6 +27,7 @@
 }
 .MovieCard-description h4 {
   margin-bottom: 1rem;
+  word-break: break-word;
 }
 .MovieCard-description .myButton {
   margin-top: 1rem;

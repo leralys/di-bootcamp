@@ -5,7 +5,8 @@ import {
     REQUEST_MOVIES_FAILED,
     FETCH_MOVIE_PENDING,
     FETCH_MOVIE_SUCCESS,
-    FETCH_MOVIE_FAILED
+    FETCH_MOVIE_FAILED,
+    RETURN_TO_MAIN
 } from './constants';
 
 import APIKey from '../APIKey';
@@ -44,5 +45,11 @@ export const getMovieById = id => async (dispatch) => {
     }
     catch (err) {
         dispatch({ type: FETCH_MOVIE_FAILED, payload: err })
+    }
+}
+
+export const clearState = () => {
+    return {
+        type: RETURN_TO_MAIN
     }
 }

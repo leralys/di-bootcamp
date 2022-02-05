@@ -4,7 +4,7 @@ import MovieCard from './MovieCard';
 // styles
 import './css/MovieGrid.css'
 
-const MovieGrid = (props) => {
+const MovieGrid = () => {
     return (
         <ContentWrapper>
             <div className="MovieGrid">
@@ -13,4 +13,5 @@ const MovieGrid = (props) => {
         </ContentWrapper >
     )
 }
+
 export default MovieGrid;

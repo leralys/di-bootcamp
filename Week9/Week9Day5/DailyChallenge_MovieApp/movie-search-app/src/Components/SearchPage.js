@@ -8,34 +8,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 const SearchPage = (props) => {
+    // add here error handling
     return (
         <div className="App">
             <Search />
-            {props.isPending &&
-                <ContentWrapper>
+            {props.isPending
+                ? <ContentWrapper>
                     <FontAwesomeIcon icon={faSpinner} spin size="6x" />
                 </ContentWrapper>
-            }
-            {props.data.length > 0 &&
-                <MovieGrid arr={props.data} />
+                : <MovieGrid />
             }
         </div>
     )
 }
 
-// const mapStateToProps = (state) => {
-//     return {
-//         searchText: state.searchText,
-//         data: state.data,
-//         isPending: state.isPending,
-//         error: state.error
-//     }
-// }
-
 const mapStateToProps = (state) => {
     return {
-        searchText: state.movies.searchText,
-        data: state.movies.data,
         isPending: state.movies.isPending,
         error: state.movies.error
     }

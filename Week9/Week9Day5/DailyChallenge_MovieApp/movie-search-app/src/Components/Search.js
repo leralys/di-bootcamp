@@ -5,7 +5,7 @@ import { setSearchText, findMovies } from '../redux/actions';
 import Button from './layout/Button'
 import ContentWrapper from './layout/ContentWrapper';
 // styles
-import './css/SearchContainer.css';
+import './css/Search.css';
 // icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -19,22 +19,13 @@ const Search = (props) => {
                         style={{ marginRight: '1rem' }} /></span>
                     <span>Search for a movie, TV series ..</span>
                 </div>
-                <input onChange={props.handleChange} onKeyPress={props.handleKeyPress} type="text" />
+                <input onChange={props.handleChange} onKeyPress={props.handleKeyPress} type="text" value={props.searchText} />
                 <br />
                 <Button text="Search" handleClick={props.handleClick} />
             </div>
         </ContentWrapper >
     )
 }
-
-// const mapStateToProps = (state) => {
-//     return {
-//         searchText: state.searchText,
-//         data: state.data,
-//         isPending: state.isPending,
-//         error: state.error
-//     }
-// }
 
 const mapStateToProps = (state) => {
     return {

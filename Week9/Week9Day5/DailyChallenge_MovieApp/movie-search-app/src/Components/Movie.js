@@ -1,53 +1,56 @@
 import { connect } from 'react-redux';
-import ContentWrapper from './layout/ContentWrapper'
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 // components
-// import Button from './layout/Button';
+import Button from './layout/Button';
 // styles
-// import './css/MovieCard.css';
+import './css/Movie.css';
 
 const Movie = (props) => {
-    return (
-        <div>
-            <ContentWrapper>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <div style={{ padding: '1rem 2rem' }}>
-                    <p>{props.movie.Title}</p>
-                    <p>{props.movie.Director}</p>
-                    <p>{props.movie.Type}</p>
-                    <p>{props.movie.Genre}</p>
-                    <p>{props.movie.imdbRating}</p>
+    if (props.error !== '') {
+        return <h1>Sorry, something went wrong</h1>
+    } else {
+        return (
+            <main>
+                <section className="Movie-details">
+                    <div className="Movie-details-image">
+                        <img src={props.movie.Poster} />
+                    </div>
+                    <div className="Movie-details-data">
+                        <h2>{props.movie.Title}</h2>
+                        <div className="Movie-details-table">
+                            <p><b>Type:</b> {props.movie.Type}</p>
+                            <p><b>Genre:</b> {props.movie.Genre}</p>
+                            <p><b>Released:</b> {props.movie.Released}</p>
+                            <p><b>Rated:</b> {props.movie.Rated}</p>
+                            <p><b>IMDB Rating:</b> {props.movie.imdbRating}</p>
+                            <p><b>Director:</b> {props.movie.Director}</p>
+                            <p><b>Writer:</b> {props.movie.Writer}</p>
+                            <p><b>Actors:</b> {props.movie.Actors}</p>
+                            <p><b>Awards:</b> {props.movie.Awards}</p>
+                        </div>
+                    </div>
+                </section>
+                <section className="Movie-about">
+                    <h3>About</h3>
                     <p>{props.movie.Plot}</p>
-                    <p>{props.movie.Awards}</p>
-                    <p>{props.movie.Country}</p>
-                    <p>{props.movie.Actors}</p>
-                </div>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-            </ContentWrapper>
-
-        </div>
-    )
+                    <br />
+                    <hr />
+                    <div className="Movie-about-links">
+                        <a href={`https://www.imdb.com/title/${props.movie.imdbID}`} target="_blank" rel="noopener noreferrer">
+                            <Button text="View on IMDB" />
+                        </a>
+                        <Link to={'/'}>Go Back To Search</Link>
+                    </div>
+                </section>
+            </main >
+        )
+    }
 }
 
 const mapStateToProps = (state) => {
     return {
-        movie: state.movieInfo.movie
+        movie: state.movieInfo.movie,
+        error: state.movieInfo.error
     }
 }
 

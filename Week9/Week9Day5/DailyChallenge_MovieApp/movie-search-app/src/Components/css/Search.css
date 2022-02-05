@@ -19,3 +19,14 @@
 #search-icon {
   color: #282c34;
 }
+
+@media only screen and (max-width: 650px) {
+  .SearchContainer input {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .SearchContainer-header:nth-child(1) {
+    font-size: 1.5rem;
+  }
+}

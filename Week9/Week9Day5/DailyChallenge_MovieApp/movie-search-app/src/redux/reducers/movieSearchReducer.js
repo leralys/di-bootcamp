@@ -2,7 +2,8 @@ import {
     CHANGE_SEARCH_TEXT,
     REQUEST_MOVIES_PENDING,
     REQUEST_MOVIES_SUCCESS,
-    REQUEST_MOVIES_FAILED
+    REQUEST_MOVIES_FAILED,
+    RETURN_TO_MAIN
 } from '../constants';
 
 const initState = {
@@ -17,13 +18,16 @@ export const movieSearchReducer = (state = initState, action = {}) => {
         case CHANGE_SEARCH_TEXT:
             return {
                 ...state,
-                searchText: action.payload
+                searchText: action.payload,
+                isPending: false,
+                error: ''
             }
         case REQUEST_MOVIES_PENDING:
             return {
                 ...state,
                 isPending: true,
                 searchText: '',
+                error: ''
             }
         case REQUEST_MOVIES_SUCCESS:
             return {
@@ -37,6 +41,14 @@ export const movieSearchReducer = (state = initState, action = {}) => {
             return {
                 ...state,
                 error: action.payload,
+                isPending: false,
+                searchText: '',
+                data: [],
+            }
+        case RETURN_TO_MAIN:
+            return {
+                ...state,
+                error: '',
                 isPending: false,
                 searchText: '',
                 data: [],

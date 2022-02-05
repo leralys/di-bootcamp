@@ -21,12 +21,14 @@ export const fetchMovieReducer = (state = initState, action = {}) => {
         case FETCH_MOVIE_SUCCESS:
             return {
                 ...state,
+                isPending: false,
                 movie: action.payload,
                 error: ''
             }
         case FETCH_MOVIE_FAILED:
             return {
                 ...state,
+                isPending: false,
                 movie: [],
                 error: action.payload
             }

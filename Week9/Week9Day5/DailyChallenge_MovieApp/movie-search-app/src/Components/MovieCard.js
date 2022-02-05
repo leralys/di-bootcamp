@@ -15,12 +15,6 @@ const MovieCard = (props) => {
                         <div className="MovieCard-description">
                             <h4>{el.Title}</h4>
                             <p>{el.Year}</p>
-                            {/* <Link className="btn btn-primary" to={'/movie/' + movie.imdbID}></Link> */}
-                            {/* <Link to="/dashboard">
-                                <button type="button">
-                                    Click Me!
-                                </button>
-                            </Link> */}
                             <Link to={`/movies/${el.imdbID}`}><Button text="Details &#8680;" /></Link>
                         </div>
                     </div>
@@ -32,7 +26,7 @@ const MovieCard = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        data: state.movies.data
+        data: state.movies.data,
     }
 }
 

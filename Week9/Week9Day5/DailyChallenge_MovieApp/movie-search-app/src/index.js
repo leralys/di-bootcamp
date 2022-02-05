@@ -7,7 +7,6 @@ import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import './index.css';
 import App from './App';
-// import { movieSearchReducer } from './redux/reducers';
 import rootReducer from './redux/reducers/rootReducer';
 
 // import reportWebVitals from './reportWebVitals';
@@ -17,7 +16,6 @@ import Header from './Components/layout/Header';
 import Footer from './Components/layout/Footer';
 import MoviePage from './Components/MoviePage';
 
-// const store = createStore(movieSearchReducer, applyMiddleware(thunk, logger));
 const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
 ReactDOM.render(
