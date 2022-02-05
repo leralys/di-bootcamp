@@ -1,16 +1,16 @@
 // components
-import Wrapper from './Wrapper';
-import MovieCard from '../MovieCard';
+import ContentWrapper from './layout/ContentWrapper';
+import MovieCard from './MovieCard';
 // styles
 import './css/MovieGrid.css'
 
 const MovieGrid = (props) => {
     return (
-        <Wrapper>
+        <ContentWrapper>
             <div className="MovieGrid">
-                <MovieCard arr={props.arr} />
+                <MovieCard />
             </div>
-        </Wrapper >
+        </ContentWrapper >
     )
 }
 export default MovieGrid;

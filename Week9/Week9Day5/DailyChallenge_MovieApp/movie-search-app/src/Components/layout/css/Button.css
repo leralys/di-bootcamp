@@ -15,8 +15,10 @@
 }
 .myButton:hover {
   background-color: #05485b;
+  position: relative;
+  top: 1px;
 }
 .myButton:active {
   position: relative;
-  top: 1px;
+  top: 2px;
 }

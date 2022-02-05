@@ -3,16 +3,16 @@ import { connect } from 'react-redux';
 import { setSearchText, findMovies } from '../redux/actions';
 // components
 import Button from './layout/Button'
-import Wrapper from './layout/Wrapper';
+import ContentWrapper from './layout/ContentWrapper';
 // styles
 import './css/SearchContainer.css';
 // icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
-const SearchContainer = (props) => {
+const Search = (props) => {
     return (
-        <Wrapper>
+        <ContentWrapper>
             <div className="SearchContainer">
                 <div className="SearchContainer-header">
                     <span><FontAwesomeIcon icon={faSearch} size="2x" id="search-icon"
@@ -23,10 +23,27 @@ const SearchContainer = (props) => {
                 <br />
                 <Button text="Search" handleClick={props.handleClick} />
             </div>
-        </Wrapper >
+        </ContentWrapper >
     )
 }
 
+// const mapStateToProps = (state) => {
+//     return {
+//         searchText: state.searchText,
+//         data: state.data,
+//         isPending: state.isPending,
+//         error: state.error
+//     }
+// }
+
+const mapStateToProps = (state) => {
+    return {
+        searchText: state.movies.searchText,
+        data: state.movies.data,
+        isPending: state.movies.isPending,
+        error: state.movies.error
+    }
+}
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -39,4 +56,4 @@ const mapDispatchToProps = dispatch => {
         }
     }
 }
-export default connect(null, mapDispatchToProps)(SearchContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(Search);

@@ -1,4 +1,8 @@
-// import { combineReducers } from 'redux';
-// import { setSearchTextReducer, fetchMoviesReducer } from './reducers';
+import { combineReducers } from 'redux';
+import { movieSearchReducer } from './movieSearchReducer';
+import { fetchMovieReducer } from './fetchMovieReducer';
 
-// export default combineReducers({ setSearchTextReducer, fetchMoviesReducer });
+export default combineReducers({
+    movies: movieSearchReducer,
+    movieInfo: fetchMovieReducer
+});

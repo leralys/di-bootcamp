@@ -1,11 +1,15 @@
+// import { Routes, Route } from "react-router-dom";
 // components
-import Home from './Components/Home'
+import SearchPage from './Components/SearchPage';
 // styles
 import './App.css';
 
 const App = () => {
   return (
-    <Home />
+    <div className="App">
+      <SearchPage />
+    </div>
+
   );
 }
 

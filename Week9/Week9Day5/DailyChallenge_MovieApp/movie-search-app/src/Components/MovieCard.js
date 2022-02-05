@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
 // components
 import Button from './layout/Button';
 // styles
@@ -14,7 +15,13 @@ const MovieCard = (props) => {
                         <div className="MovieCard-description">
                             <h4>{el.Title}</h4>
                             <p>{el.Year}</p>
-                            <Button text="Details &#8680;" />
+                            {/* <Link className="btn btn-primary" to={'/movie/' + movie.imdbID}></Link> */}
+                            {/* <Link to="/dashboard">
+                                <button type="button">
+                                    Click Me!
+                                </button>
+                            </Link> */}
+                            <Link to={`/movies/${el.imdbID}`}><Button text="Details &#8680;" /></Link>
                         </div>
                     </div>
                 })
@@ -25,7 +32,7 @@ const MovieCard = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        data: state.data,
+        data: state.movies.data
     }
 }
 
