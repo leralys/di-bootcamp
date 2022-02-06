@@ -30,8 +30,9 @@ export const findMovies = () => async (dispatch, getState) => {
             const data = await responce.json();
             dispatch({ type: REQUEST_MOVIES_SUCCESS, payload: data });
         }
-        catch (err) {
-            dispatch({ type: REQUEST_MOVIES_FAILED, payload: err })
+        catch (error) {
+            // console.log('failed', err);
+            dispatch({ type: REQUEST_MOVIES_FAILED, payload: error })
         }
     }
 }

@@ -30,12 +30,14 @@ export const movieSearchReducer = (state = initState, action = {}) => {
                 error: ''
             }
         case REQUEST_MOVIES_SUCCESS:
+            // console.log('REQUEST_MOVIES_SUCCESS', action.payload.Search);
             return {
                 ...state,
                 data: action.payload.Search,
                 isPending: false,
                 searchText: '',
-                error: ''
+                error: action.payload.Error
+                // error: action.payload.Search || 'Sorry, something went wrong'
             }
         case REQUEST_MOVIES_FAILED:
             return {

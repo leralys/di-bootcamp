@@ -2,31 +2,29 @@ import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 // components
 import Button from './layout/Button';
+import ContentWrapper from './layout/ContentWrapper';
 // styles
+import './css/MovieGrid.css'
 import './css/MovieCard.css';
 
 const MovieCard = (props) => {
     return (
-        <>
-            {
-                props.data.map(el => {
-                    return <div key={el.imdbID} className="MovieCard">
-                        <img className="MovieCard-image" src={el.Poster} alt={el.Title} />
-                        <div className="MovieCard-description">
-                            <h4>{el.Title}</h4>
-                            <p>{el.Year}</p>
-                            <Link to={`/movies/${el.imdbID}`}><Button text="Details &#8680;" /></Link>
-                        </div>
-                    </div>
-                })
-            }
-        </>
+        props.data.map(el => {
+            return <div key={el.imdbID} className="MovieCard">
+                <img className="MovieCard-image" src={el.Poster} alt={el.Title} />
+                <div className="MovieCard-description">
+                    <h4>{el.Title}</h4>
+                    <p>{el.Year}</p>
+                    <Link to={`/movies/${el.imdbID}`}><Button text="Details &#8680;" /></Link>
+                </div>
+            </div>
+        })
     )
 }
 
 const mapStateToProps = (state) => {
     return {
-        data: state.movies.data,
+        data: state.movies.data
     }
 }
 
