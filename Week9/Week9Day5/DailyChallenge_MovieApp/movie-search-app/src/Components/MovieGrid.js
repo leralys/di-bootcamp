@@ -6,6 +6,9 @@ import MovieCard from './MovieCard';
 import './css/MovieGrid.css'
 
 const MovieGrid = (props) => {
+    console.log(props.data.length);
+    // console.log('data', props.data);
+    // if (props.data.length > 0) {
     if (props.data) {
         return (
             <ContentWrapper>

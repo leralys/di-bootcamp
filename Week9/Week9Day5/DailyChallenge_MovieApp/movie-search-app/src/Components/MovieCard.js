@@ -2,9 +2,7 @@ import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 // components
 import Button from './layout/Button';
-import ContentWrapper from './layout/ContentWrapper';
 // styles
-import './css/MovieGrid.css'
 import './css/MovieCard.css';
 
 const MovieCard = (props) => {

@@ -13,8 +13,12 @@ const Header = (props) => {
         <div className="Header">
             <span className="Header-logo"><Link to={'/'} onClick={props.clearState}>MovieSeriesInfo</Link></span>
             <div>
-                <FontAwesomeIcon icon={faImdb} size="4x" id="imdb" />
-                <FontAwesomeIcon icon={faReact} size="4x" id="react" />
+                <a href="http://www.omdbapi.com/" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faImdb} size="4x" id="imdb" />
+                </a>
+                <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer" id="react-footer">
+                    <FontAwesomeIcon icon={faReact} size="4x" id="react" />
+                </a>
             </div>
         </div>
     )

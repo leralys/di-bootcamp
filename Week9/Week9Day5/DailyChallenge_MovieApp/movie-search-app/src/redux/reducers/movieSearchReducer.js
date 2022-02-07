@@ -33,7 +33,7 @@ export const movieSearchReducer = (state = initState, action = {}) => {
             // console.log('REQUEST_MOVIES_SUCCESS', action.payload.Search);
             return {
                 ...state,
-                data: action.payload.Search,
+                data: action.payload.Search || [],
                 isPending: false,
                 searchText: '',
                 error: action.payload.Error
