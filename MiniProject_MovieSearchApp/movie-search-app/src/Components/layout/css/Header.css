@@ -1,0 +1,52 @@
+.Header {
+  background: #282c34;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+}
+.Header-logo a {
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+#imdb {
+  color: #f5de50;
+  margin-right: 1rem;
+}
+#react {
+  color: #61dafb;
+}
+
+@media only screen and (max-width: 500px) {
+  .Header-logo a {
+    font-size: 1.5rem;
+  }
+  #imdb {
+    font-size: 3rem;
+  }
+  #react {
+    font-size: 3rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #imdb {
+    font-size: 2rem;
+  }
+  #react {
+    font-size: 2rem;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .Header-logo a {
+    font-size: 1.3rem;
+  }
+  #imdb {
+    font-size: 1rem;
+  }
+  #react {
+    font-size: 1rem;
+  }
+}
