@@ -21,7 +21,7 @@ class TransactionForm extends Component {
             FSC: '',
             accHolder: '',
             amount: ''
-        };
+        }
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -31,7 +31,7 @@ class TransactionForm extends Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.insertTransaction(this.state);
-        this.setState({ accountNo: '', FSC: '', accHolder: '', amount: '' })
+        this.setState({ accountNo: '', FSC: '', accHolder: '', amount: '' });
     }
     render() {
         return (
@@ -58,14 +58,19 @@ class TransactionForm extends Component {
     }
 }
 
-
-const mapDispatchToProps = (dispatch) => {
+const mapStateToProps = (state) => {
     return {
-        insertTransaction: (transaction) => dispatch(insertTransaction(transaction))
+        currentIndex: state.currentIndex
     }
 }
 
-export default connect(null, mapDispatchToProps)(TransactionForm);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        insertTransaction: (transaction) => dispatch(insertTransaction(transaction)),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TransactionForm);
 
 
 

@@ -13,7 +13,8 @@ import { INSERT, UPDATE, DELETE, UPDATE_INDEX } from '../actions/transactionActi
 
 let initialState = {
     currentIndex: -1,
-    list: JSON.parse(localStorage.getItem('transactions')) || []
+    list: JSON.parse(localStorage.getItem('transactions')) || [],
+    toUpdate: ''
 }
 
 function transactionReducer(state = initialState, action = {}) {
@@ -27,7 +28,9 @@ function transactionReducer(state = initialState, action = {}) {
             localStorage.setItem('transactions', JSON.stringify(filteredList));
             return { ...state, list: filteredList }
         case UPDATE:
-            return { ...state }
+            return { ...state, toUpdate: action.payload }
+        case UPDATE_INDEX:
+            return { ...state, currentIndex: action.payload }
         default:
             return { ...state }
     }
