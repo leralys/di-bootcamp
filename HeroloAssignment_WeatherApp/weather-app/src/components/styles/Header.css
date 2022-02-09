@@ -1,0 +1,10 @@
+.Header {
+  background-color: var(--color-dark-blue);
+}
+.Header.css-1t29gy6-MuiToolbar-root {
+  justify-content: space-between;
+}
+.Header a {
+  text-decoration: none;
+  color: var(--color-white);
+}
