@@ -1,5 +1,5 @@
 .Wrapper {
-  background-color: #f8f9fa;
+  background-color: var(--color-light-grey);
   margin: 1rem 5vw;
   text-align: center;
 }

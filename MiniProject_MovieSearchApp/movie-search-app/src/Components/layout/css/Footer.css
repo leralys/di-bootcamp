@@ -1,16 +1,16 @@
 .Footer {
-  background-color: #282c34;
-  color: white;
+  background-color: var(--color-dark-grey);
+  color: var(--color-white);
   padding: 3rem;
 }
 .Footer a {
-  color: #f5de50;
+  color: var(--color-imdb-yellow);
   margin-left: 10px;
   margin-right: 10px;
 }
 #react-footer {
-  color: #61dafb;
+  color: var(--color-react-blue);
 }
 #redux {
-  color: #764abc;
+  color: var(--color-redux-purple);
 }

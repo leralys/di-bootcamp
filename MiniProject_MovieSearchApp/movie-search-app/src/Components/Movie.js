@@ -2,8 +2,6 @@ import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 // components
 import Button from './layout/Button';
-import Card from '@mui/material/Card';
-import CardMedia from "@mui/material/CardMedia";
 // styles
 import './css/Movie.css';
 

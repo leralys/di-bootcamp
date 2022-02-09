@@ -2,7 +2,7 @@
   padding: 1rem;
 }
 .SearchContainer-header {
-  background: #f8f9fa;
+  background: var(--color-light-grey);
   margin-bottom: 1rem;
 }
 .SearchContainer-header:nth-child(1) {
@@ -17,7 +17,7 @@
   font-size: 1.2rem;
 }
 #search-icon {
-  color: #282c34;
+  color: var(--color-dark-grey);
 }
 
 @media only screen and (max-width: 650px) {

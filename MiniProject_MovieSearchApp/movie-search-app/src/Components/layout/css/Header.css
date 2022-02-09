@@ -1,5 +1,5 @@
 .Header {
-  background: #282c34;
+  background: var(--color-dark-grey);
   height: 100px;
   display: flex;
   align-items: center;
@@ -7,17 +7,17 @@
   padding: 0 3rem;
 }
 .Header-logo a {
-  color: white;
+  color: var(--color-white);
   font-size: 2rem;
   text-decoration: none;
 }
 
 #imdb {
-  color: #f5de50;
+  color: var(--color-imdb-yellow);
   margin-right: 1rem;
 }
 #react {
-  color: #61dafb;
+  color: var(--color-react-blue);
 }
 
 @media only screen and (max-width: 500px) {

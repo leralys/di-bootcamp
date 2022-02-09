@@ -9,10 +9,10 @@
   font-size: xx-large;
 }
 .Movie-details-image {
-  background-color: #282c34;
+  background-color: var(--color-dark-grey);
   align-self: flex-start;
   border-radius: 0.5rem;
-  box-shadow: 0.2rem 0.2rem 0.5rem 0.25rem rgba(40, 44, 52, 0.392);
+  box-shadow: 0.2rem 0.2rem 0.5rem 0.25rem var(--color-box-shadow);
 }
 .Movie-details {
   display: flex;
@@ -25,23 +25,23 @@
   margin-left: 1rem;
   flex-grow: 2;
   text-align: left;
-  border: 1px solid #c0c0c0;
+  border: 1px solid car(--color-grey-border);
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 .Movie-details-data p {
-  border-bottom: 1px solid #c0c0c0;
+  border-bottom: 1px solid car(--color-grey-border);
   padding: 0.75rem;
 }
 .Movie-details-data p:nth-last-of-type(1) {
   border: none;
 }
 .Movie-about {
-  background-color: #282c34;
+  background-color: var(--color-dark-grey);
   text-align: left;
-  color: white;
+  color: var(--color-white);
   padding: 2rem;
   margin-top: 2rem;
   border-radius: 0.5rem;
@@ -56,7 +56,7 @@
   margin-top: 1rem;
 }
 .Movie-about a {
-  color: #c0c0c0;
+  color: var(--color-grey-border);
   margin-right: 2rem;
 }
 @media only screen and (max-width: 700px) {
