@@ -31,7 +31,10 @@
     font-size: 3rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 400px) {
+  .Header-logo a {
+    font-size: 1.5rem;
+  }
   #imdb {
     font-size: 2rem;
   }
@@ -40,13 +43,12 @@
   }
 }
 @media only screen and (max-width: 350px) {
+  .Header {
+    padding: 2rem;
+  }
+}
+@media only screen and (max-width: 350px) {
   .Header-logo a {
-    font-size: 1.3rem;
-  }
-  #imdb {
-    font-size: 1rem;
-  }
-  #react {
     font-size: 1rem;
   }
 }

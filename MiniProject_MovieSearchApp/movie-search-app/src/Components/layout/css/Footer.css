@@ -14,3 +14,14 @@
 #redux {
   color: var(--color-redux-purple);
 }
+@media only screen and (max-width: 650px) {
+  .Footer {
+    line-height: 2;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .Footer {
+    padding: 1.8rem;
+  }
+}

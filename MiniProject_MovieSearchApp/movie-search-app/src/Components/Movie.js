@@ -8,7 +8,7 @@ import './css/Movie.css';
 
 const Movie = (props) => {
     if (props.error !== '') {
-        return <h1>Sorry, something went wrong</h1>
+        return <h1>Sorry, something went wrong 😓</h1>
     } else {
         return (
             <>
