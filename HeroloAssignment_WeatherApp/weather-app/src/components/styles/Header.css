@@ -1,5 +1,6 @@
 .Header {
   background-color: var(--color-dark-blue);
+  margin-bottom: 4rem;
 }
 .Header.css-hip9hq-MuiPaper-root-MuiAppBar-root {
   justify-content: space-between;

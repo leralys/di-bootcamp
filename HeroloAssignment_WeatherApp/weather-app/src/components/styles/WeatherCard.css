@@ -1,0 +1,12 @@
+.MuiCard-root.css-1ri6ub7-MuiPaper-root-MuiCard-root {
+  margin: 0 auto;
+}
+
+.MuiCardActions-root {
+  justify-content: space-between;
+}
+@media screen and (max-width: 900px) {
+  .MuiGrid-root {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,12 @@
+.Search-input {
+  border: 1px solid var(--color-grey);
+  display: flex;
+  justify-content: space-between;
+  border-radius: 4px;
+  padding-left: 10px;
+  margin-bottom: 4rem;
+  background-color: var(--color-white);
+}
+.MuiLoadingButton-loadingIndicator {
+  padding-right: 16px;
+}

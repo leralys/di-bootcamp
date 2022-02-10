@@ -40,3 +40,10 @@ code {
   --color-grey: #80848d;
   --color-white: #fff;
 }
+body {
+  background-color: var(--color-light-purple);
+}
+
+.page {
+  min-height: 80vh;
+}
