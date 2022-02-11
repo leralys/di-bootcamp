@@ -1,24 +1,17 @@
 import {
-    CHANGE_SEARCH_TEXT,
     REQUEST_WEATHER_PENDING,
     REQUEST_WEATHER_SUCCESS,
     REQUEST_WEATHER_ERROR,
 } from '../constants';
 
 const initState = {
-    searchText: '',
-    cityKey: 215854,
     loading: false,
-    data: {}
+    data: {},
+    error: ''
 }
 
-export const reducer = (state = initState, action = {}) => {
+export const getForecastReducer = (state = initState, action = {}) => {
     switch (action.type) {
-        case CHANGE_SEARCH_TEXT:
-            return {
-                ...state,
-                searchText: action.payload,
-            }
         case REQUEST_WEATHER_PENDING:
             return {
                 ...state,

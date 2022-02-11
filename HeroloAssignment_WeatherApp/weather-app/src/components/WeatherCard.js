@@ -21,7 +21,6 @@ const WeatherCard = () => {
                 </IconButton>
                 <Button variant='text'>View on AccuWeather.com</Button>
             </CardActions>
-
         </Card>
     );
 }

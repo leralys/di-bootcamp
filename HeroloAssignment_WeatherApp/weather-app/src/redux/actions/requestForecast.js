@@ -6,12 +6,13 @@ import {
 import axios from 'axios';
 import { apiKey } from '../../api/api';
 
-export const requestWeathercast = () => async (dispatch, getState) => {
-    const { cityKey } = getState();
-    console.log(cityKey);
+const requestForecast = () => async (dispatch, getState) => {
+    console.log('requestForecast');
+    const cityKey = getState().city.cityKey;
     dispatch({ type: REQUEST_WEATHER_PENDING });
     try {
         const res = await axios.get(`http://localhost:2500/api/five`);
+        // const res = await axios.get(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityKey}?apikey=${apiKey}`);
         dispatch({
             type: REQUEST_WEATHER_SUCCESS,
             payload: res.data
@@ -23,3 +24,5 @@ export const requestWeathercast = () => async (dispatch, getState) => {
         })
     }
 }
+
+export default requestForecast;
