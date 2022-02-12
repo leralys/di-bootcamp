@@ -1,27 +1,31 @@
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import { Card, CardHeader, CardContent, CardActions, IconButton, Typography, Button } from '@mui/material';
+
+import { useSelector } from 'react-redux';
+import { Grid, Card, CardContent, Typography } from '@mui/material';
 import './styles/WeatherCard.css';
+import dateHelpers from '../assets/helpers/dateHelper';
+import temp from '../assets/helpers/farToCelHelper';
 
 const WeatherCard = () => {
-    let num = 1;
+    const days = useSelector(state => state.forecast.data.DailyForecasts);
     return (
-        <Card sx={{ maxWidth: 345 }}>
-            <CardHeader title='Shrimp and Chorizo Paella' />
-            <img src={require(`../assets/images/weatherImages/${num}.png`)} />
-            <CardContent>
-                <Typography variant='body2' color='text.secondary'>
-                    This impressive paella is a perfect party dish and a fun meal to cook
-                    together with your guests. Add 1 cup of frozen peas along with the mussels,
-                    if you like.
-                </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-                <IconButton aria-label='add to favorites'>
-                    <FavoriteIcon />
-                </IconButton>
-                <Button variant='text'>View on AccuWeather.com</Button>
-            </CardActions>
-        </Card>
+        days.map(day => {
+            let dates = dateHelpers(day.Date);
+            return <Grid item xs={4} sm={4} md={4} key={day.EpochDate}>
+                <Card sx={{ minWidth: 275, maxWidth: 345 }}>
+                    <CardContent>
+                        <Typography>{dates[0]}</Typography>
+                        <Typography>{dates[1]}/{dates[2]}</Typography>
+                        <img src={require(`../assets/images/weatherImages/${day.Day.Icon}.png`)}
+                            alt={day.Day.IconPhrase} />
+                        <Typography>{day.Day.IconPhrase}</Typography>
+                        <Typography variant='body2' color='text.secondary'>
+                            {temp(day.Temperature.Minimum.Value)} -
+                            {temp(day.Temperature.Maximum.Value)}°C
+                        </Typography>
+                    </CardContent>
+                </Card>
+            </Grid>
+        })
     );
 }
 

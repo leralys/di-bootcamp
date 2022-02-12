@@ -6,7 +6,7 @@ import {
 
 const initState = {
     loading: false,
-    data: [],
+    data: undefined,
     error: ''
 }
 

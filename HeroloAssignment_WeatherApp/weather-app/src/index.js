@@ -6,8 +6,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import Container from '@mui/material/Container';
-import Home from './components/Home';
-import Favorites from './components/Favorites';
+import Home from './routes/Home';
+import Favorites from './routes/Favorites';
 import Header from './components/Header';
 import './index.css';
 

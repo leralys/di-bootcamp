@@ -1,8 +1,8 @@
 .Header {
   background-color: var(--color-dark-blue);
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
 }
-.Header.css-hip9hq-MuiPaper-root-MuiAppBar-root {
+.Header.MuiPaper-root.MuiAppBar-root {
   justify-content: space-between;
   background-color: var(--color-dark-blue);
 }
